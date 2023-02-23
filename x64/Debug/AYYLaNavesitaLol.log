@@ -1,27 +1,22 @@
 ﻿  daRender.cpp
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Utils.hpp(13,11): warning C4244: 'initializing': conversion from 'Uint32' to 'float', possible loss of data
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(23): error C2102: '&' requires l-value
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(24): error C2102: '&' requires l-value
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.cpp(87,30): error C2228: left of '.x' must have class/struct/union
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.cpp(87,30): message : type is 'SDL_Rect *'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.cpp(87,30): message : did you intend to use '->' instead?
   Entity.cpp
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Utils.hpp(13,11): warning C4244: 'initializing': conversion from 'Uint32' to 'float', possible loss of data
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(41,16): error C2061: syntax error: identifier 'EntityFr'
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(72,10): error C2143: syntax error: missing ';' before '*'
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(72,10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(72,18): error C2238: unexpected token(s) preceding ';'
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(23): error C2102: '&' requires l-value
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(24): error C2102: '&' requires l-value
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(40,16): error C2061: syntax error: identifier 'EntityFr'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(71,10): error C2143: syntax error: missing ';' before '*'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(71,10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(71,18): error C2238: unexpected token(s) preceding ';'
   main.cpp
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Utils.hpp(13,11): warning C4244: 'initializing': conversion from 'Uint32' to 'float', possible loss of data
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(23): error C2102: '&' requires l-value
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(24): error C2102: '&' requires l-value
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\main.cpp(47,19): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\main.cpp(47,15): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Texture.cpp
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Utils.hpp(13,11): warning C4244: 'initializing': conversion from 'Uint32' to 'float', possible loss of data
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(41,16): error C2061: syntax error: identifier 'EntityFr'
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(72,10): error C2143: syntax error: missing ';' before '*'
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(72,10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(72,18): error C2238: unexpected token(s) preceding ';'
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(23): error C2102: '&' requires l-value
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(24): error C2102: '&' requires l-value
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(40,16): error C2061: syntax error: identifier 'EntityFr'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(71,10): error C2143: syntax error: missing ';' before '*'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(71,10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(71,18): error C2238: unexpected token(s) preceding ';'
   Generating Code...
