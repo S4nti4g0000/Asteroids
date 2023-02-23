@@ -5,12 +5,12 @@
 #define SDL_MAIN_HANDLED
 #include <SDL.h>
 #include <SDL_image.h>
+#include "../AYYLaNavesitaLol/EntityFr.hpp"
 #include <iostream>
 #include <vector>
 #include <unordered_map>
 
 #include "Singleton.hpp"
-#include "EntityFr.hpp"
 #include "Texture.hpp"
 
 using namespace std;

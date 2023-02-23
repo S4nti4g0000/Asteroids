@@ -10,7 +10,7 @@
 #include "Component.hpp"
 #include "ecs.hpp"
 #include "Manager.hpp"
-
+#include "daRender.hpp"
 
 class EntityFr
 {
