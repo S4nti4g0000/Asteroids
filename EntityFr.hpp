@@ -18,7 +18,11 @@ class EntityFr
 public:
 
 	EntityFr(TransformComponent* transform, SDL_Texture* texture, Manager* manager, float velocity)
+		:tCompo_(transform), entTexture(texture), mngr_(manager), velocity_(velocity), aliveBoi(true)
 	{
+		pos = &transform->getPosition();
+		cFrame = &transform->getSize();
+
 	}
 
 	Vector2D* getPos()

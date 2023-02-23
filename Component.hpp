@@ -4,6 +4,8 @@
 #include "daRender.hpp"
 #include "Utils.hpp"
 
+class EntityFr;
+
 class Component
 {
 
@@ -21,7 +23,8 @@ class TransformComponent : public Component
 
 public:
 
-	TransformComponent(float x, float y) :position_(x,y)
+	TransformComponent(EntityFr* entity = nullptr, float x = 0, float y = 0, float a = 0, int w = 1, int h= 1)
+		:entity_(entity), position_(Vector2D(x,y)), velocity_(Vector2D(0,0)), angle(a), width(w), height(h)
 	{}
 
 	virtual void Update(EntityFr& entity)
@@ -37,6 +40,10 @@ public:
 	{
 		return position_;
 	}
+	inline SDL_Rect getSize() const
+	{
+		return size_;
+	}
 
 	inline void setPosition(const Vector2D& position)
 	{
@@ -48,7 +55,13 @@ public:
 
 private:
 
-	EntityFr entity_;
+	EntityFr* entity_;
 	Vector2D position_;
+	Vector2D velocity_;
+	SDL_Rect size_;
+
+	float angle;
+	int width;
+	int height;
 
 };
