@@ -1,0 +1,25 @@
+﻿  daRender.cpp
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Utils.hpp(13,11): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(27,22): error C2061: error de sintaxis: identificador 'EntityFr'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.cpp(10,1): error C2512: 'EntityFr': no hay disponible un constructor predeterminado adecuado
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(15,7): message : vea la declaración de 'EntityFr'
+  Entity.cpp
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Utils.hpp(13,11): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(41,16): error C2061: error de sintaxis: identificador 'EntityFr'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(72,11): error C3646: 'entity': especificador de invalidación desconocido
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(72,17): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(27,22): error C2061: error de sintaxis: identificador 'EntityFr'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Entity.cpp(3,11): error C2084: la función 'EntityFr::EntityFr(TransformComponent *,SDL_Texture *,Manager *,float)' ya tiene un cuerpo
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(20): message : vea la definición anterior de '{ctor}'
+  main.cpp
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Utils.hpp(13,11): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(27,22): error C2061: error de sintaxis: identificador 'EntityFr'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\main.cpp(47,19): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\main.cpp(47,15): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Texture.cpp
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Utils.hpp(13,11): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(41,16): error C2061: error de sintaxis: identificador 'EntityFr'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(72,11): error C3646: 'entity': especificador de invalidación desconocido
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.hpp(72,17): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(27,22): error C2061: error de sintaxis: identificador 'EntityFr'
+  Generando código...
