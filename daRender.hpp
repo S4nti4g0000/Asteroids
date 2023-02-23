@@ -15,6 +15,8 @@
 
 using namespace std;
 
+class EntityFr;
+
 //Window class and constructor to render the window with specific parameters (title and proportions)
 
 class rWindow

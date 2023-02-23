@@ -84,17 +84,17 @@ void rWindow::daRender(EntityFr& texture)
 
 	SDL_Rect src;
 
-	src.x = texture.getwReckd().x;
-	src.y = texture.getwReckd().y;
-	src.w = texture.getwReckd().w;
-	src.y = texture.getwReckd().h;
+	src.x = texture.getwReckd()->x;
+	src.y = texture.getwReckd()->y;
+	src.w = texture.getwReckd()->w;
+	src.y = texture.getwReckd()->h;
 
 	SDL_Rect dst;
 
-	dst.x = texture.getPos().getX();
-	dst.y = texture.getPos().getY();
-	dst.w = texture.getwReckd().w;
-	dst.h = texture.getwReckd().h;
+	dst.x = texture.getPos()->getX();
+	dst.y = texture.getPos()->getY();
+	dst.w = texture.getwReckd()->w;
+	dst.h = texture.getwReckd()->h;
 	
 	//If src and dsl values are null it will fill the screen
 
