@@ -1,6 +1,9 @@
 #include "daRender.hpp"
 #include "EntityFr.hpp"
 #include "Utils.hpp"
+#include "../AYYLaNavesitaLol/Component.hpp"
+#include "../AYYLaNavesitaLol/Texture.hpp"
+#include "../AYYLaNavesitaLol/Manager.hpp"
 
 namespace utils
 {
@@ -61,6 +64,10 @@ int main(int argc, const char **argv[])
 	Vector2D pos(x1, y1);
 	Vector2D sp(0, 0);
 		
+	EntityFr* Ship();
+	TransformComponent* transform();
+
+	transform()->setPosition(Vector2D(0,0));
 
 	//Game loop------------------------------------------------------------------------------------
 

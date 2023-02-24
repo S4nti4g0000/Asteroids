@@ -50,6 +50,11 @@ public:
 		position_ = position;
 	}
 
+	inline void initTr()
+	{
+
+	}
+
 	virtual ~TransformComponent() {}
 
 

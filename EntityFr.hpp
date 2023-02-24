@@ -58,5 +58,6 @@ private:
 	float velocity_;
 	bool aliveBoi;
 
+	std::vector<Component*> cComps_;
 
 };
