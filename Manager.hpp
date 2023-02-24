@@ -7,7 +7,7 @@
 #include "Utils.hpp"
 #include "EntityFr.hpp"
 
-class Entity;
+class EntityFr;
 
 class Manager
 {
@@ -30,7 +30,7 @@ public:
 	Manager(const Manager&) = delete;
 	Manager& operator = (const Manager&) = delete;
 
-	Entity* addEnts();
+	EntityFr* addEnts();
 
 	void Update()
 	{
@@ -46,8 +46,8 @@ public:
 	}
 private:
 
-	Entity* ent;
+	EntityFr* ent;
 
-	std::vector<Entity*> entities_;
+	std::vector<EntityFr*> entities_;
 
 };

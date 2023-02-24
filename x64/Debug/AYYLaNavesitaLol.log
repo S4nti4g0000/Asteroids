@@ -1,5 +1,17 @@
-﻿  main.cpp
+﻿  daRender.cpp
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(56,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(61,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(78,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(83,13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.cpp(94,32): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.cpp(95,32): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  main.cpp
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(56,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(61,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(78,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(83,13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\main.cpp(13,11): warning C4244: 'initializing': conversion from 'Uint32' to 'float', possible loss of data
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\main.cpp(64,19): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\main.cpp(64,15): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
   AYYLaNavesitaLol.vcxproj -> D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\x64\Debug\AYYLaNavesitaLol.exe

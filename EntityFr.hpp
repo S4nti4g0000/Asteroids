@@ -3,6 +3,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include "Vector2D.hpp"
+#include <array>
 
 #include "Math.hpp"
 #include "Texture.hpp"
@@ -11,6 +12,8 @@
 #include "ecs.hpp"
 #include "Manager.hpp"
 #include "daRender.hpp"
+
+class Component;
 
 class EntityFr
 {
@@ -22,7 +25,6 @@ public:
 	{
 		Vector2D pos = transform->getPosition();
 		SDL_Rect cFrame = transform->getSize();
-
 
 	}
 
@@ -45,6 +47,15 @@ public:
 	{
 		return velocity_;
 	}
+
+	//Add component
+
+	template<typename T, typename ...Ts>
+	inline T* addComponent(cmpId_type cId, Ts&&...args)
+	{
+
+	}
+
 
 private:
 
