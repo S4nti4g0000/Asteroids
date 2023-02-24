@@ -1,0 +1,3 @@
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\x64\Debug\AYYLaNavesitaLol.vcxproj.MdMergeInputs.cache
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\x64\Debug\AYYLaNavesitaLol.vcxproj.cppwinrt_plat.cache
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\x64\Debug\AYYLaNavesitaLol.vcxproj.cppwinrt_comp.cache

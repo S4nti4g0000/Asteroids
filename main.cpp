@@ -2,10 +2,24 @@
 #include "EntityFr.hpp"
 #include "Utils.hpp"
 
+namespace utils
+{
+
+	inline float time()
+	{
+		float t = SDL_GetTicks();
+		t *= 0.001f;
+
+		return t;
+
+	}
+	const int NUM_KEYS = 323;
+	extern bool keys[NUM_KEYS] = { false };
+}
+
 //#include <SDL_ttf.h>
 
 using namespace std;
-using namespace utils;
 
 
 int main(int argc, const char **argv[])

@@ -112,7 +112,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>D:\Homeworks\SDL2_ttf-2.0.14\lib\x64;D:\Homeworks\SDL2_net-2.0.1\lib\x64;D:\Homeworks\SDL2_mixer-2.0.2\lib\x64;D:\Homeworks\SDL2_image-2.0.1\lib\x64;D:\Homeworks\SDL\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;utils.obj</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

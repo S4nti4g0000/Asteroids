@@ -7,7 +7,7 @@
 #include <string>
 
 #include "Singleton.hpp"
-#include "EntityFr.hpp"
+//#include "EntityFr.hpp"
 
 class Texture
 {

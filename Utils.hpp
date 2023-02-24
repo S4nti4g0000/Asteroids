@@ -5,21 +5,6 @@
 #include <chrono>
 #include "Singleton.hpp"
 
-namespace utils
-{
-
-	inline float time()
-	{
-		float t = SDL_GetTicks();
-		t *= 0.001f;
-
-		return t;
-
-	}
-	const int NUM_KEYS = 323;
-	bool keys[NUM_KEYS];
-}
-
 
 class InputHandler : public Singleton<InputHandler>
 {

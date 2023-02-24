@@ -32,8 +32,8 @@ public:
 
 	//-----
 
-	template<typename T>
-	using sdl_resources = unordered_map<string, T>;
+	//template<typename T>
+	//using sdl_resources = unordered_map<string, T>;
 		
 	int getRefreshRate();
 
@@ -49,16 +49,7 @@ public:
 
 	//-----
 
-	template <typename T>
-	class wrapper
-	{
-		sdl_resources<T> &map_;
-		string desc_;
-		wrapper(sdl_resources<T> &map, string desc)
-			:map_(map), desc_(desc)
-		{}
 
-	};
 
 	//virtual ~rWindow();
 
