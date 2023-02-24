@@ -59,6 +59,23 @@ public:
 		return velocity_;
 	}
 
+	inline bool isAlive()
+	{
+		return aliveBoi;
+	}
+
+	//setters
+
+	inline bool setAlive(bool alive)
+	{
+		aliveBoi = alive;
+	}
+
+	inline void setContext(Manager* man)
+	{
+		mngr_ = man;
+	}
+
 	//Add, remove, get component
 
 	template<typename T, typename ...Ts>

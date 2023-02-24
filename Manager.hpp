@@ -43,10 +43,8 @@ public:
 	{
 		
 	}
-	void Refresh()
-	{
+	inline void Refresh();
 
-	}
 	void Render()
 	{
 
