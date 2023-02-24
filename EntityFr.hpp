@@ -66,6 +66,17 @@ public:
 		return c;
 	}
 
+	inline void removeComponent(cmpId_type cId)
+	{
+		if (compId_[cId] != nullptr)
+		{
+			auto iter = std::find(cComps_.begin(), cComps_.end(), compId_[cId]);
+			cComps_.erase(iter);
+			delete compId_[cId];
+			compId_[cId] = nullptr;
+		}
+	}
+
 
 private:
 
