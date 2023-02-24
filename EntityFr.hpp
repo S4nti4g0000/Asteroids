@@ -26,7 +26,19 @@ public:
 		Vector2D pos = transform->getPosition();
 		SDL_Rect cFrame = transform->getSize();
 
+		cComps_.reserve(maxCompId);
+
 	}
+
+	virtual ~EntityFr()
+	{
+		for (auto c : cComps_)
+		{
+			delete c;
+		}
+	}
+
+	//Getters
 
 	Vector2D* getPos()
 	{
@@ -48,7 +60,7 @@ public:
 		return velocity_;
 	}
 
-	//Add component
+	//Add, remove, get component
 
 	template<typename T, typename ...Ts>
 	inline T* addComponent(cmpId_type cId, Ts&&...args)
@@ -77,6 +89,36 @@ public:
 		}
 	}
 
+	template<typename T>
+	inline void getComponent(cmpId_type cId)
+	{
+		return static_cast<T*>(compId_[cId]);
+	}
+
+	inline bool hasComponent(cmpId_type cId)
+	{
+		return compId_[cId] != nullptr;
+	}
+
+	//Call update and render of all components
+
+	inline void updateC()
+	{
+		auto n = cComps_.size();
+		for (auto i = 0u; i < n; i++)
+		{
+			cComps_[i]->Update();
+		}
+	}
+
+	inline void renderC()
+	{
+		auto n = cComps_.size();
+		for (auto i = 0u; i < n; i++)
+		{
+			cComps_[i]->Render();
+		}
+	}
 
 private:
 
