@@ -67,7 +67,7 @@ int main(int argc, const char **argv[])
 	EntityFr* Ship();
 	TransformComponent* transform();
 
-	transform()->setPosition(Vector2D(0,0));
+	//transform()->setPosition(Vector2D(0,0));
 
 	//Game loop------------------------------------------------------------------------------------
 

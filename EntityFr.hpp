@@ -59,5 +59,6 @@ private:
 	bool aliveBoi;
 
 	std::vector<Component*> cComps_;
+	std::array<Component*, maxCompId> compId_;
 
 };
