@@ -60,7 +60,7 @@ void Manager::Render()
 
 virtual ~Manager::Manager()
 {
-	//code
+	
 }
 
 
