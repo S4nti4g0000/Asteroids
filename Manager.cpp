@@ -60,10 +60,7 @@ void Manager::Render()
 
 virtual ~Manager::Manager()
 {
-	for (auto e : entities_)
-	{
-		delete e;
-	}
+	//code
 }
 
 
