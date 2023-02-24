@@ -1,11 +1,4 @@
-﻿  daRender.cpp
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Utils.hpp(13,11): warning C4244: 'initializing': conversion from 'Uint32' to 'float', possible loss of data
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.cpp(94,32): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.cpp(95,32): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  Texture.cpp
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Utils.hpp(13,11): warning C4244: 'initializing': conversion from 'Uint32' to 'float', possible loss of data
-  Generating Code...
-Entity.obj : error LNK2005: "bool * utils::keys" (?keys@utils@@3PA_NA) already defined in daRender.obj
-main.obj : error LNK2005: "bool * utils::keys" (?keys@utils@@3PA_NA) already defined in daRender.obj
-Texture.obj : error LNK2005: "bool * utils::keys" (?keys@utils@@3PA_NA) already defined in daRender.obj
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\x64\Debug\AYYLaNavesitaLol.exe : fatal error LNK1169: one or more multiply defined symbols found
+﻿  Utils.cpp
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Utils.hpp(13,11): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Utils.cpp(5,7): error C2369: 'utils::keys': nueva definición; subíndices distintos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Utils.hpp(20): message : vea la declaración de 'utils::keys'
