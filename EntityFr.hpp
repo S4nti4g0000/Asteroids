@@ -14,17 +14,16 @@
 #include "daRender.hpp"
 
 class Component;
+class Manager;
 
 class EntityFr
 {
 
 public:
 
-	EntityFr(TransformComponent* transform, SDL_Texture* texture, Manager* manager, float velocity)
-		:tCompo_(transform), entTexture(texture), mngr_(manager), velocity_(velocity), aliveBoi(true)
+	EntityFr()
+		:tCompo_(), mngr_(nullptr), compId_(), aliveBoi(true)
 	{
-		Vector2D pos = transform->getPosition();
-		SDL_Rect cFrame = transform->getSize();
 
 		cComps_.reserve(maxCompId);
 

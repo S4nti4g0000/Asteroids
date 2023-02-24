@@ -1,10 +1,16 @@
 #pragma once
 
+#define MANAGER_HPP	
+
 #include "daRender.hpp"
 #include "Texture.hpp"
 #include "Vector2D.hpp"
 #include "Singleton.hpp"
 #include "Utils.hpp"
+
+#include <vector>
+#include <memory>
+
 #include "EntityFr.hpp"
 
 class EntityFr;
@@ -30,14 +36,8 @@ public:
 	Manager(const Manager&) = delete;
 	Manager& operator = (const Manager&) = delete;
 
-	inline EntityFr& addEnts()
-	{
-		EntityFr* e = new EntityFr();
-		//std::unique_ptr<EntityFr> uPtr{ e };
 
-		entities_.push_back(e);
-		return e;
-	}
+	inline EntityFr* addEnts();
 
 	void Update()
 	{
