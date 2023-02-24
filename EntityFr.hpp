@@ -53,7 +53,17 @@ public:
 	template<typename T, typename ...Ts>
 	inline T* addComponent(cmpId_type cId, Ts&&...args)
 	{
+		T* c = new T(std::forward<Ts>(args)...);
 
+		removeComponent(cId);
+
+		cComps_.push_back(c);
+		compId_[cId] = c;
+
+		c->setContext(this, mngr_);
+		c->initComponent();
+
+		return c;
 	}
 
 
