@@ -1,6 +1,13 @@
 #include "Manager.hpp"
 #include "EntityFr.hpp"
 
+class Manager;
+
+Manager::Manager()
+{
+	entities_.reserve(100);
+}
+
 EntityFr* Manager::addEnts()
 {
 	EntityFr* e = new EntityFr();
@@ -48,6 +55,14 @@ void Manager::Render()
 	for (auto i = 0; i < n; i++)
 	{
 		entities_[i]->updateC();
+	}
+}
+
+virtual ~Manager::Manager()
+{
+	for (auto e : entities_)
+	{
+		delete e;
 	}
 }
 
