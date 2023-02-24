@@ -30,7 +30,14 @@ public:
 	Manager(const Manager&) = delete;
 	Manager& operator = (const Manager&) = delete;
 
-	EntityFr* addEnts();
+	inline EntityFr& addEnts()
+	{
+		EntityFr* e = new EntityFr();
+		//std::unique_ptr<EntityFr> uPtr{ e };
+
+		entities_.push_back(e);
+		return e;
+	}
 
 	void Update()
 	{
