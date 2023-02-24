@@ -32,3 +32,24 @@ void Manager::Refresh()
 
 	);
 }
+
+void Manager::Update()
+{
+	auto n = entities_.size();
+	for (auto i = 0; i < n; i++)
+	{
+		entities_[i]->updateC();
+	}
+}
+
+void Manager::Render()
+{
+	auto n = entities_.size();
+	for (auto i = 0; i < n; i++)
+	{
+		entities_[i]->updateC();
+	}
+}
+
+
+

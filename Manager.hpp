@@ -21,9 +21,9 @@ class Manager
 
 public:
 
-	//Constructor and destructor set to be empty with "default"
-	Manager() = default;
-	virtual ~Manager() = default;
+	
+	Manager();
+	virtual ~Manager();
 
 	//Only one instance of the entity manager can exist
 	static Manager& getInstance()
@@ -36,19 +36,13 @@ public:
 	Manager(const Manager&) = delete;
 	Manager& operator = (const Manager&) = delete;
 
+	//methods
 
 	inline EntityFr* addEnts();
-
-	void Update()
-	{
-		
-	}
+	inline void Update();
 	inline void Refresh();
+	void Render();
 
-	void Render()
-	{
-
-	}
 private:
 
 	EntityFr* ent;
