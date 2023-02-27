@@ -71,6 +71,7 @@ public:
 	inline bool setAlive(bool alive)
 	{
 		aliveBoi = alive;
+		return this;
 	}
 
 	inline void setContext(Manager* man)

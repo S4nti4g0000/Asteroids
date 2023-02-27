@@ -23,9 +23,9 @@ public:
 		manager_ = mngr;
 	}
 
-	virtual void Update();
-	virtual void Render();
-	virtual void initComponent();
+	inline void Update();
+	inline void Render();
+	inline void initComponent();
 	
 protected:
 
@@ -49,9 +49,8 @@ public:
 		position_ = position_ + velocity_;
 
 	}
-	virtual void Render()
-	{
-	}
+	void Render();
+
 	void initComponent();
 
 	//Getters
@@ -147,8 +146,8 @@ public:
 
 	}
 
-	void initComponent() override;
-	void Render() override;
+	inline void initComponent();
+	inline void Render();
 
 private:
 

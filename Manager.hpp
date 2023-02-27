@@ -9,7 +9,7 @@
 #include "Utils.hpp"
 
 #include <vector>
-#include <memory>
+#include <memory>	
 
 #include "EntityFr.hpp"
 
@@ -17,7 +17,6 @@ class EntityFr;
 
 class Manager
 {
-
 
 public:
 
@@ -46,10 +45,10 @@ public:
 
 	//methods
 
-	inline EntityFr* addEnts();
+	virtual EntityFr* addEnts();
 	inline void Update();
-	inline void Refresh();
-	void Render();
+	virtual void Refresh();
+	inline void Render();
 
 private:
 
