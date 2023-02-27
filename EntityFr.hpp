@@ -109,10 +109,11 @@ public:
 	}
 
 	template<typename T>
-	inline void getComponent(cmpId_type cId)
+	inline T* getComponent(cmpId_type cId)
 	{
 		return static_cast<T*>(compId_[cId]);
 	}
+
 
 	inline bool hasComponent(cmpId_type cId)
 	{

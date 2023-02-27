@@ -135,7 +135,7 @@ public:
 
 	virtual ~Image();
 
-	inline void initComponent();
+	void initComponent();
 	inline void Render();
 
 	SDL_Rect b_rect(const Vector2D& position, int width, int height)

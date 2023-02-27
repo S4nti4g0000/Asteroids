@@ -16,6 +16,11 @@ void TransformComponent::initComponent()
 
 }
 
+Image::~Image()
+{
+	delete texture_;
+}
+
 void TransformComponent::Update(EntityFr& ent)
 {
 	position_ = position_ + velocity_;
