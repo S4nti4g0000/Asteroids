@@ -15,3 +15,23 @@ void TransformComponent::initComponent()
 	angle_ = 0;
 
 }
+
+void TransformComponent::Update(EntityFr& ent)
+{
+	position_ = position_ + velocity_;
+}
+
+void Image::initComponent()
+{
+	transform_: entity_->getComponent<TransformComponent>(_Transform);
+	assert(transform_ != nullptr);
+
+}
+
+void Image::Render()
+{
+	SDL_Rect dest = b_rect(transform_->getPosition(), transform_->getW(), transform_->getH());
+
+	texture_->render(dest, transform_->getAngle());
+
+}

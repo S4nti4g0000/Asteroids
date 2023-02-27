@@ -43,14 +43,8 @@ public:
 		:entity_(entity), position_(Vector2D(x,y)), velocity_(Vector2D(0,0)), angle_(a), width_(w), height_(h)
 	{}
 
-	void Update(EntityFr& entity)
-	{
-
-		position_ = position_ + velocity_;
-
-	}
+	void Update(EntityFr& entity);
 	void Render();
-
 	void initComponent();
 
 	//Getters
@@ -140,11 +134,6 @@ public:
 	}
 
 	virtual ~Image();
-
-	void Update(EntityFr& ent)
-	{
-
-	}
 
 	inline void initComponent();
 	inline void Render();

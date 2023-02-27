@@ -50,7 +50,7 @@ int main(int argc, const char **argv[])
 	//Texture--------------------------------------------------------------------------------------
 
 	SDL_Renderer* renderer = window.renderer();
-	//Texture shipTexture(renderer, "resources/ShipSprites/Ship1.png");
+	Texture shipTexture(renderer, "resources/ShipSprites/Ship1.png");
 	//Texture asteroidTexture(renderer, "resources/images/AstImg.png");
 
 	//Entity---------------------------------------------------------------------------------------
@@ -67,8 +67,9 @@ int main(int argc, const char **argv[])
 
 	auto ship = man_->addEnts();
 	auto shipComp = ship->addComponent<TransformComponent>(_Transform, ship, 0, 0, 0, 32, 32);
-
-	//shipComp->setContext(renderer);
+	ship->addComponent<Image>(_frmImage, shipTexture);
+	shipComp->setPosition(Vector2D(0, 0));
+	shipComp->setContext(ship, man_);
 	
 	
 
