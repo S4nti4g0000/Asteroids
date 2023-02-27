@@ -39,6 +39,10 @@ public:
 		return tHeight_;
 	}
 
+	/*inline SDL_Rect b_rect(const Vector2D& pos, int w, int h)
+	{
+		return SDL_Rect{ static_cast<int>(pos.getX(), -w / 2), static_cast<int>(pos.getY(), -h / 2) };
+	}*/
 
 	//SDL_RenderCopyEx
 

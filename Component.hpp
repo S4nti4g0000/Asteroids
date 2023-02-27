@@ -138,7 +138,16 @@ public:
 	inline void initComponent();
 	inline void Render();
 
-	
+	SDL_Rect b_rect(const Vector2D& position, int width, int height)
+	{
+		SDL_Rect rect;
+		rect.x = position.getX();
+		rect.y = position.getY();
+		rect.w = width;
+		rect.h = height;
+		return rect;
+	}
+
 
 private:
 
