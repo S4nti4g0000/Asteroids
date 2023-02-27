@@ -2,6 +2,7 @@
 
 #include "EntityFr.hpp"
 #include "daRender.hpp"
+#include "Texture.hpp"
 #include "Utils.hpp"
 
 class EntityFr;
@@ -30,7 +31,6 @@ protected:
 
 	EntityFr* entity_;
 	Manager* manager_;
-	Texture* texture_;
 
 };
 
@@ -136,10 +136,9 @@ class Image : public Component
 
 public:
 
-	Image(Texture* tex) : transform_(), texture_(tex)
+	Image(Texture* tex) : transform_(nullptr), texture_(tex)
 	{
 	}
-
 
 private:
 

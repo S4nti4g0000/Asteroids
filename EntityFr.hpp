@@ -2,19 +2,21 @@
 
 #include <SDL.h>
 #include <SDL_image.h>
-#include "Vector2D.hpp"
 #include <array>
 
+#include "Vector2D.hpp"
 #include "Math.hpp"
 #include "Texture.hpp"
 #include "Utils.hpp"
-#include "Component.hpp"
 #include "ecs.hpp"
 #include "Manager.hpp"
+#include "Component.hpp"
 #include "daRender.hpp"
 
+
 class Component;
-class Manager;
+class TransformComponent;
+
 
 class EntityFr
 {
@@ -140,6 +142,7 @@ private:
 
 	TransformComponent* tCompo_;
 
+	Component* comp;
 	Vector2D* pos;
 	SDL_Texture* entTexture;
 	SDL_Rect* cFrame;
