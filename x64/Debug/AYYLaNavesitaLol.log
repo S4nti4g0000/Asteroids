@@ -5,10 +5,6 @@ D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(38,4): w
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(17): message : see declaration of 'Component'
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(105,4): warning C4150: deletion of pointer to incomplete type 'Component'; no destructor called
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(17): message : see declaration of 'Component'
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(128,1): error C2027: use of undefined type 'Component'
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(17): message : see declaration of 'Component'
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(137,1): error C2027: use of undefined type 'Component'
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(17): message : see declaration of 'Component'
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(74,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(79,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(107,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
@@ -22,6 +18,13 @@ D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Manager.hpp(32,4): wa
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Manager.hpp(16): message : see declaration of 'EntityFr'
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.cpp(94,32): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.cpp(95,32): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Entity.cpp
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(74,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(79,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(107,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(112,13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Manager.hpp(32,4): warning C4150: deletion of pointer to incomplete type 'EntityFr'; no destructor called
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Manager.hpp(16): message : see declaration of 'EntityFr'
   main.cpp
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(74,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(79,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
@@ -46,3 +49,9 @@ D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(79,10):
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(107,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(112,13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   Generating Code...
+main.obj : error LNK2001: unresolved external symbol "public: virtual void __cdecl Component::Update(void)" (?Update@Component@@UEAAXXZ)
+main.obj : error LNK2001: unresolved external symbol "public: virtual void __cdecl Component::Render(void)" (?Render@Component@@UEAAXXZ)
+main.obj : error LNK2001: unresolved external symbol "public: virtual void __cdecl Component::initComponent(void)" (?initComponent@Component@@UEAAXXZ)
+main.obj : error LNK2019: unresolved external symbol "public: class EntityFr * __cdecl Manager::addEnts(void)" (?addEnts@Manager@@QEAAPEAVEntityFr@@XZ) referenced in function main
+Manager.obj : error LNK2019: unresolved external symbol "public: void __cdecl EntityFr::updateC(void)" (?updateC@EntityFr@@QEAAXXZ) referenced in function "public: void __cdecl Manager::Render(void)" (?Render@Manager@@QEAAXXZ)
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\x64\Debug\AYYLaNavesitaLol.exe : fatal error LNK1120: 5 unresolved externals

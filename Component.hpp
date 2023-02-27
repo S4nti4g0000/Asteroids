@@ -140,6 +140,16 @@ public:
 	{
 	}
 
+	virtual ~Image();
+
+	void Update(EntityFr& ent)
+	{
+
+	}
+
+	void initComponent() override;
+	void Render() override;
+
 private:
 
 	TransformComponent* transform_;

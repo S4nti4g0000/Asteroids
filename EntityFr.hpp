@@ -120,23 +120,9 @@ public:
 
 	//Call update and render of all components
 
-	inline void updateC()
-	{
-		auto n = cComps_.size();
-		for (auto i = 0u; i < n; i++)
-		{
-			cComps_[i]->Update();
-		}
-	}
+	inline void updateC();
 
-	inline void renderC()
-	{
-		auto n = cComps_.size();
-		for (auto i = 0u; i < n; i++)
-		{
-			cComps_[i]->Render();
-		}
-	}
+	inline void renderC();
 
 private:
 
