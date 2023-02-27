@@ -138,6 +138,8 @@ public:
 	inline void initComponent();
 	inline void Render();
 
+	
+
 private:
 
 	TransformComponent* transform_;
