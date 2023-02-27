@@ -23,7 +23,15 @@ public:
 
 	
 	Manager();
-	virtual ~Manager();
+
+	virtual ~Manager()
+	{
+		
+		for (auto e: entities_)
+		{
+			delete e;
+		}
+	}
 
 	//Only one instance of the entity manager can exist
 	static Manager& getInstance()

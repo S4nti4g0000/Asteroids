@@ -58,10 +58,6 @@ void Manager::Render()
 	}
 }
 
-virtual ~Manager::Manager()
-{
-	
-}
 
 
 

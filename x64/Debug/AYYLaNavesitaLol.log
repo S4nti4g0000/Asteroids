@@ -1,1 +1,52 @@
-﻿D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\packages\Microsoft.Windows.CppWinRT.2.0.210806.1\build\native\Microsoft.Windows.CppWinRT.targets(656,9): warning MSB5021: Terminating the task executable "cmd" and its child processes because the build was canceled.
+﻿  Component.cpp
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Manager.hpp(32,4): warning C4150: eliminación de puntero a tipo 'EntityFr' incompleto; no se ha llamado a un destructor
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Manager.hpp(16): message : vea la declaración de 'EntityFr'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(141,20): error C2143: error de sintaxis: falta ';' delante de '*'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(141,20): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(141,29): error C2238: símbolos (token) inesperados delante de ';'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(25,4): error C2614: 'EntityFr': inicialización de miembro no válida: 'tCompo_' no es una base o miembro
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(36,4): warning C4150: eliminación de puntero a tipo 'Component' incompleto; no se ha llamado a un destructor
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(16): message : vea la declaración de 'Component'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(103,4): warning C4150: eliminación de puntero a tipo 'Component' incompleto; no se ha llamado a un destructor
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(16): message : vea la declaración de 'Component'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(126,1): error C2027: uso del tipo 'Component' sin definir
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(16): message : vea la declaración de 'Component'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(135,1): error C2027: uso del tipo 'Component' sin definir
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(16): message : vea la declaración de 'Component'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(70,10): warning C4244: 'return': conversión de 'const int' a 'float'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(75,10): warning C4244: 'return': conversión de 'const int' a 'float'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(103,12): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(108,13): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  daRender.cpp
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(70,10): warning C4244: 'return': conversión de 'const int' a 'float'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(75,10): warning C4244: 'return': conversión de 'const int' a 'float'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(103,12): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(108,13): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Manager.hpp(32,4): warning C4150: eliminación de puntero a tipo 'EntityFr' incompleto; no se ha llamado a un destructor
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Manager.hpp(16): message : vea la declaración de 'EntityFr'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.cpp(94,32): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.cpp(95,32): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  main.cpp
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(70,10): warning C4244: 'return': conversión de 'const int' a 'float'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(75,10): warning C4244: 'return': conversión de 'const int' a 'float'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(103,12): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(108,13): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Manager.hpp(32,4): warning C4150: eliminación de puntero a tipo 'EntityFr' incompleto; no se ha llamado a un destructor
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Manager.hpp(16): message : vea la declaración de 'EntityFr'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\main.cpp(14,11): warning C4244: 'inicializando': conversión de 'Uint32' a 'float'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(84,32): warning C4244: 'argumento': conversión de '_Ty' a 'float'; posible pérdida de datos
+          with
+          [
+              _Ty=int
+          ]
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\main.cpp(69): message : Vea la referencia a la creación de una instancia de la función plantilla "T *EntityFr::addComponent<TransformComponent,EntityFr*&,int,int,int,int,int>(cmpId_type,EntityFr *&,int &&,int &&,int &&,int &&,int &&)" que se está compilando
+          with
+          [
+              T=TransformComponent
+          ]
+  Manager.cpp
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(70,10): warning C4244: 'return': conversión de 'const int' a 'float'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(75,10): warning C4244: 'return': conversión de 'const int' a 'float'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(103,12): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(108,13): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+  Generando código...

@@ -2,6 +2,8 @@
 
 #include <cstdint>
 
+#include "Component.hpp"
+
 using cmpId_type = uint8_t;
 
 enum comId : cmpId_type

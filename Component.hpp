@@ -5,17 +5,33 @@
 #include "Utils.hpp"
 
 class EntityFr;
+class Manager;
 
 class Component
 {
 
 public:
-	Component() = default;
+	Component(): entity_(), manager_()
+	{}
+
 	virtual ~Component() = default;
+
+	inline void setContext(EntityFr* ent, Manager* mngr)
+	{
+		entity_ = ent;
+		manager_ = mngr;
+	}
 
 	virtual void Update();
 	virtual void Render();
+	virtual void initComponent();
 	
+protected:
+
+	EntityFr* entity_;
+	Manager* manager_;
+	Texture* texture_;
+
 };
 
 class TransformComponent : public Component
@@ -27,14 +43,16 @@ public:
 		:entity_(entity), position_(Vector2D(x,y)), velocity_(Vector2D(0,0)), angle_(a), width_(w), height_(h)
 	{}
 
-	virtual void Update(EntityFr& entity)
+	void Update(EntityFr& entity)
 	{
+
+		position_ = position_ + velocity_;
 
 	}
 	virtual void Render()
 	{
-
 	}
+	void initComponent();
 
 	//Getters
 
@@ -60,6 +78,17 @@ public:
 	{
 		return height_;
 	}
+
+	inline float getX_(float x)
+	{
+		x_ = x;
+	}
+	
+	inline float getY_(float y)
+	{
+		y_ = y;
+	}
+
 
 	//Setters
 
@@ -96,5 +125,25 @@ private:
 	float angle_;
 	int width_;
 	int height_;
+
+	float x_;
+	float y_;
+
+};
+
+class Image : public Component
+{
+
+public:
+
+	Image(Texture* tex) : transform_(), texture_(tex)
+	{
+	}
+
+
+private:
+
+	TransformComponent* transform_;
+	Texture* texture_;
 
 };
