@@ -62,25 +62,35 @@ int main(int argc, const char **argv[])
 	auto vX = 1;
 	auto vY = 1;
 
+	//Textures
+
+	auto shipTx = new Texture(renderer, "resources/ShipSprites/Ship1.png");
+	auto fireTx = new Texture(renderer, "resources/images/fire.png");
+
+	//Manager
 
 	auto man_ = new Manager();
 
 	auto ship = man_->addEnts();
+	auto bullet = man_->addEnts();
+
+	//Ship components
+
+	auto shipComp = ship->addComponent<TransformComponent>(_Transform, ship , 0, 64, 64);
+	ship->addComponent<Image>(_frmImage, shipTx);
 	ship->setName("ship");
 	ship->setAlive(true);
-	auto shipTx = new Texture(renderer, "resources/ShipSprites/Ship1.png");
-	auto shipComp = ship->addComponent<TransformComponent>(_Transform, ship , 0, 64, 64);
-	//shipComp->setX(winWidth / 2 - shipComp->getW()/2);
-	//shipComp->setY(winWidth / 2 - shipComp->getH() / 2);
 	shipComp->setAngle(0);
 	shipComp->setWidth(64);
 	shipComp->setHeight(64);
-	ship->addComponent<Image>(_frmImage, shipTx);
 	shipComp->setPosition(Vector2D(0, 0));
 	shipComp->setContext(ship, man_);
 
+	//Bullet components
 	
-	
+	bullet->addComponent<Image>(_frmImage, fireTx);
+	bullet->setName("bullet");
+
 	
 
 	//transform()->setPosition(Vector2D(0,0));

@@ -57,15 +57,6 @@ public:
 	{
 		return size_;
 	}
-
-	inline float getCuSpeed()
-	{
-		return currSpeed_;
-	}
-	inline float getMaxSp()
-	{
-		return maxSpeed_;
-	}
 	inline float getAngle()
 	{
 		return angle_;
@@ -248,3 +239,32 @@ private:
 
 };
 
+class Bullet : public Component
+{
+
+public:
+
+	Bullet(EntityFr* ent, float x, float y)
+		:entity_(ent), bPos_(Vector2D(bX_ = x, bY_ = y))
+	{
+	}
+
+	inline float getBullX()
+	{
+		return bX_;
+	}
+	inline float getBullY()
+	{
+		return bY_;
+	}
+
+private:
+
+	EntityFr* entity_;
+	Vector2D bPos_;
+
+	float bX_;
+	float bY_;
+
+
+};
