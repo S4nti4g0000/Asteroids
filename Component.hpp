@@ -24,7 +24,7 @@ public:
 	}
 
 	inline void Update();
-	inline void Render();
+	virtual void Render();
 	inline void initComponent();
 	
 protected:
@@ -168,12 +168,12 @@ private:
 
 
 
-class AsteroidBehaviour: public Component
+class AsteroidBehaviour : public Component
 {
 
 public:
 
-	AsteroidBehaviour(float speed, bool dmg, int h): speed_(speed), dmg_(dmg),health_(h), entity_(nullptr)
+	AsteroidBehaviour(float speed, bool dmg, int h) : speed_(speed), dmg_(dmg), health_(h), entity_(nullptr)
 	{}
 
 	virtual ~AsteroidBehaviour();
@@ -188,7 +188,7 @@ public:
 
 	bool isDestroyed()
 	{
-		return health_<=0;
+		return health_ <= 0;
 	}
 
 	inline int getAsHealth()
@@ -198,8 +198,10 @@ public:
 
 private:
 
+	EntityFr* entity_;
+
 	float speed_;
 	bool dmg_;
 	int health_ = 1;
 
-}
+};

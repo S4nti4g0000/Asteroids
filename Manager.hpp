@@ -2,16 +2,17 @@
 
 #define MANAGER_HPP	
 
+#include <vector>
+#include <memory>	
+
+#include "EntityFr.hpp"
 #include "daRender.hpp"
 #include "Texture.hpp"
 #include "Vector2D.hpp"
 #include "Singleton.hpp"
 #include "Utils.hpp"
 
-#include <vector>
-#include <memory>	
 
-#include "EntityFr.hpp"
 
 class EntityFr;
 
@@ -50,7 +51,7 @@ public:
 	virtual void Refresh();
 	inline void Render();
 
-	EntityFr* getEntity(const std::string& name) const
+	inline EntityFr* getEntity(const std::string& name) const
 	{
 		for(auto entity: entities_)
 		{

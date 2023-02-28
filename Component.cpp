@@ -48,12 +48,12 @@ void Image::Render()
 
 //Normal Asteroid logic--
 
-AsteroidBehaviour::initComponent()
+void AsteroidBehaviour::initComponent()
 {
 	entity_ = manager_->getEntity("ship");
 }
 
-AsteroidBehaviour::Update(EntityFr& ent)
+void AsteroidBehaviour::Update(EntityFr& ent)
 {
 
 
