@@ -49,17 +49,35 @@ void TransformComponent::Update(EntityFr& ent)
 
 		position_ = position_ + velocity_;
 	}
-	else if (inH.isKeyUp(SDL_SCANCODE_W))
+	if (inH.isKeyUp(SDL_SCANCODE_W))
 	{
-		velocity_ = velocity_ * friction_;
+		float currentAccelerationMag = acceleration_.getLength();
+		if (currentAccelerationMag > 0.0f)
+		{
+			float decel = decelerationMagnitude_ * inH.deltaTime();
+			float decelerationMag = std::min(currentAccelerationMag, decel);
+			Vector2D deceleration = acceleration_.getNormalized() * decelerationMag;
+			acceleration_ = acceleration_ - deceleration;
+		}
 
+		velocity_ = velocity_ + acceleration_;
 		position_ = position_ + velocity_;
 	}
+	
+	velocity_ = velocity_ + acceleration_;
+	velocity_ = velocity_ * friction_;
+
+	position_ = position_ + velocity_;
 	
 
 	if (inH.isKeyDown(SDL_SCANCODE_A))
 	{		
 		angle_ -= 5;
+
+		acceleration_.setX(sin(angle_ * (M_PI / 180.0)) * accelerationMagnitude_);
+		acceleration_.setY(-cos(angle_ * (M_PI / 180.0)) * accelerationMagnitude_);
+
+		velocity_ = velocity_ + acceleration_;
 	}
 	
 

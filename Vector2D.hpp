@@ -100,6 +100,19 @@ public:
 
 	Vector2D rotate(float deg) const;
 
+	Vector2D getNormalized()
+	{
+		float len = getLength();
+		if (len == 0)
+		{
+			return Vector2D(0, 0);
+		}
+		else
+		{
+			return Vector2D(x_ / len, y_ / len);
+		}
+	}
+
 	float angle(const Vector2D& v) const;
 
 	//----

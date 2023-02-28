@@ -40,7 +40,7 @@ class TransformComponent : public Component
 public:
 
 	TransformComponent(EntityFr* entity, float a, int w = 1, int h= 1)
-		:entity_(entity), position_(Vector2D(x_, y_)), velocity_(Vector2D(vX_, vY_)), angle_(a), width_(w), height_(h)
+		:entity_(entity), position_(Vector2D(x_, y_)), velocity_(Vector2D(vX_, vY_)), angle_(a), targetAngle_(a), width_(w), height_(h)
 	{}
 
 	virtual void Update(EntityFr& entity);
@@ -156,8 +156,12 @@ private:
 	SDL_Rect size_;
 
 	float angle_;
+	float targetAngle_;
+	float rotateSpeed_ = 0.5;
+
 	float accelerationMagnitude_ = 0.1;
-	float maxSpeed_ = 10;
+	float decelerationMagnitude_ = 0.5;
+	float maxSpeed_ = 5;
 	float currSpeed_ = 0;
 	float friction_ = 0.95;
 	//float acceleration_;
@@ -243,3 +247,4 @@ private:
 	int health_ = 1;
 
 };
+
