@@ -7,10 +7,58 @@ D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(107,4): 
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(18): message : see declaration of 'Component'
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(67,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(72,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(100,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(105,13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(154,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(155,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.cpp(58,88): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.cpp(58,68): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(109,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(114,13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(177,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(178,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.cpp(68,88): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.cpp(68,68): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Entity.cpp
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(67,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(72,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(109,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(114,13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(177,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(178,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Manager.hpp(32,4): warning C4150: deletion of pointer to incomplete type 'EntityFr'; no destructor called
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Manager.hpp(17): message : see declaration of 'EntityFr'
+  Manager.cpp
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(67,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(72,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(109,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(114,13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(177,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(178,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  daRender.cpp
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(67,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(72,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(109,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(114,13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(177,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(178,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Manager.hpp(32,4): warning C4150: deletion of pointer to incomplete type 'EntityFr'; no destructor called
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Manager.hpp(17): message : see declaration of 'EntityFr'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.cpp(94,32): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\daRender.cpp(95,32): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  main.cpp
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(67,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(72,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(109,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(114,13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(177,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(178,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Manager.hpp(32,4): warning C4150: deletion of pointer to incomplete type 'EntityFr'; no destructor called
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Manager.hpp(17): message : see declaration of 'EntityFr'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\main.cpp(14,11): warning C4244: 'initializing': conversion from 'Uint32' to 'float', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(88,32): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\main.cpp(72): message : see reference to function template instantiation 'T *EntityFr::addComponent<TransformComponent,EntityFr*&,int,int,int,int,int>(cmpId_type,EntityFr *&,int &&,int &&,int &&,int &&,int &&)' being compiled
+          with
+          [
+              T=TransformComponent
+          ]
+  Generating Code...
   AYYLaNavesitaLol.vcxproj -> D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\x64\Debug\AYYLaNavesitaLol.exe

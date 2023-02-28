@@ -39,8 +39,8 @@ class TransformComponent : public Component
 
 public:
 
-	TransformComponent(EntityFr* entity, float a, int w = 1, int h= 1)
-		:entity_(entity), position_(Vector2D(getX_(), getY_())), velocity_(Vector2D(1, 1)), angle_(a), width_(w), height_(h)
+	TransformComponent(EntityFr* entity, float x, float y, float a, int w = 1, int h= 1)
+		:entity_(entity), position_(Vector2D(x_ = x, y_ = y)), velocity_(Vector2D(vX_, vY_)), angle_(a), width_(w), height_(h)
 	{}
 
 	virtual void Update(EntityFr& entity);
@@ -82,6 +82,15 @@ public:
 		return y_;
 	}
 
+	inline float getvX()
+	{
+		return vX_;
+	}
+
+	inline float getvY()
+	{
+		return vY_;
+	}
 
 	//Setters
 
@@ -115,6 +124,17 @@ public:
 		y_ = y;
 	}
 
+	inline void setvX(float vx)
+	{
+		vX_ = vx;
+	}
+
+	inline void setvY(float vy)
+	{
+
+		vY_ = vy;
+	}
+
 	virtual ~TransformComponent() {}
 
 
@@ -131,6 +151,9 @@ private:
 
 	float x_;
 	float y_;
+
+	float vX_;
+	float vY_;
 
 };
 
