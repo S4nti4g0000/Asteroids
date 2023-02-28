@@ -36,43 +36,49 @@ void TransformComponent::Update(EntityFr& ent)
 	if (inH.isKeyDown(SDL_SCANCODE_W))
 	{
 		rad = angle_ * (M_PI / 180.0);
+		
+		acceleration_.setX(sin(rad) * accelerationMagnitude_);
+		acceleration_.setY(-cos(rad) * accelerationMagnitude_);
 
-		vX_ = sin(rad) * speed_;
-		vY_ = -cos(rad) * speed_;
+		currSpeed_ += acceleration_.getLength();
+	
+		if (currSpeed_ > maxSpeed_)
+			currSpeed_ = maxSpeed_;
 
-		velocity_.setX(vX_);
-		velocity_.setY(vY_);
+		velocity_ = velocity_ + acceleration_;
 
-		// Update position with updated velocity
+		position_ = position_ + velocity_;
+	}
+	else if (inH.isKeyUp(SDL_SCANCODE_W))
+	{
+		velocity_ = velocity_ * friction_;
+
 		position_ = position_ + velocity_;
 	}
 	
 
 	if (inH.isKeyDown(SDL_SCANCODE_A))
-	{
-		// Update velocity if needed
-		
+	{		
 		angle_ -= 5;
 	}
 	
 
 	if (inH.isKeyDown(SDL_SCANCODE_D))
-	{
-		// Update velocity if needed
-		
+	{		
 		angle_ += 5;
 	}
 	
 	if (inH.getKeyUp())
 	{
-		velocity_.setX(0);
-		velocity_.setY(0);
+		currSpeed_ -= .5;
+
+		velocity_.setX(velocity_.getX() * 0.95f);
+		velocity_.setY(velocity_.getY() * 0.95f);
+
+
 		position_ = position_ + velocity_;
 
 	}
-
-	//velocity_.setX(0);
-	//velocity_.setY(0);
 
 	setPosition(position_);
 

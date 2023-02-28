@@ -57,9 +57,14 @@ public:
 	{
 		return size_;
 	}
-	inline float getSpeed()
+
+	inline float getCuSpeed()
 	{
-		return speed_;
+		return currSpeed_;
+	}
+	inline float getMaxSp()
+	{
+		return maxSpeed_;
 	}
 	inline float getAngle()
 	{
@@ -147,10 +152,15 @@ private:
 	EntityFr* entity_;
 	Vector2D position_;
 	Vector2D velocity_;
+	Vector2D acceleration_;
 	SDL_Rect size_;
 
 	float angle_;
-	float speed_ = 5;
+	float accelerationMagnitude_ = 0.1;
+	float maxSpeed_ = 10;
+	float currSpeed_ = 0;
+	float friction_ = 0.95;
+	//float acceleration_;
 	int width_;
 	int height_;
 

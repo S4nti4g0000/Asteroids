@@ -3,7 +3,6 @@
 #include <cmath>
 #include <ostream>
 
-
 class Vector2D
 {
 
@@ -37,6 +36,11 @@ public:
 	inline float getY() const
 	{
 		return y_;
+	}
+
+	inline float getLength() const
+	{
+		return sqrt(x_ * x_ + y_ * y_);
 	}
 
 	//----
