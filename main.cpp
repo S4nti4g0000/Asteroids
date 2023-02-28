@@ -67,11 +67,19 @@ int main(int argc, const char **argv[])
 
 	auto ship = man_->addEnts();
 	ship->setName("ship");
+	ship->setAlive(true);
 	auto shipTx = new Texture(renderer, "resources/ShipSprites/Ship1.png");
-	auto shipComp = ship->addComponent<TransformComponent>(_Transform, ship, 0, 0, 0, 32, 32);
+	auto shipComp = ship->addComponent<TransformComponent>(_Transform, ship, 90, 64, 64);
+	shipComp->setX(500);
+	shipComp->setY(200);
+	shipComp->setAngle(90);
+	shipComp->setWidth(64);
+	shipComp->setHeight(64);
 	ship->addComponent<Image>(_frmImage, shipTx);
 	shipComp->setPosition(Vector2D(0, 0));
 	shipComp->setContext(ship, man_);
+
+	
 	
 	
 
@@ -149,6 +157,8 @@ int main(int argc, const char **argv[])
 		//ih().init();
 
 		window.clearScreen();
+		ship->renderC();
+		ship->updateC();
 	
 
 		//shipTexture.render(x1, y1);

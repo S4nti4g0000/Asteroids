@@ -59,5 +59,16 @@ void Manager::Render()
 }
 
 
+EntityFr* Manager::getEntity(const std::string& name)
+{
+	for (auto entity : entities_)
+	{
+		if (entity->getName() == name)
+		{
+			return entity;
+		}
+	}
 
+	return nullptr;
+}
 

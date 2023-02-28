@@ -1,26 +1,42 @@
 #pragma once
 
 #include "Component.hpp"
+#include "Manager.hpp"
+
+void Component::Render()
+{
+
+}
+
+void Component::Update()
+{}
 
 //Transform Component--
 
 void TransformComponent::initComponent()
 {
 	
-	position_.setX(0);
-	position_.setY(0);
-	velocity_.setX(0);
-	velocity_.setY(0);
+	position_.setX(getX_());
+	position_.setY(getX_());
+
 	width_ = 32;
 	height_ = 32;
 	angle_ = 0;
 
 }
 
-
 void TransformComponent::Update(EntityFr& ent)
 {
 	position_ = position_ + velocity_;
+
+	Vector2D pos = getPosition();
+
+
+}
+
+void TransformComponent::Render()
+{
+
 }
 
 //Image component--

@@ -23,7 +23,7 @@ public:
 		manager_ = mngr;
 	}
 
-	inline void Update();
+	virtual void Update();
 	virtual void Render();
 	inline void initComponent();
 	
@@ -39,12 +39,12 @@ class TransformComponent : public Component
 
 public:
 
-	TransformComponent(EntityFr* entity = nullptr, float x = 0, float y = 0, float a = 0, int w = 1, int h= 1)
-		:entity_(entity), position_(Vector2D(x,y)), velocity_(Vector2D(0,0)), angle_(a), width_(w), height_(h)
+	TransformComponent(EntityFr* entity, float a, int w = 1, int h= 1)
+		:entity_(entity), position_(Vector2D(getX_(), getY_())), velocity_(Vector2D(1, 1)), angle_(a), width_(w), height_(h)
 	{}
 
-	void Update(EntityFr& entity);
-	void Render();
+	virtual void Update(EntityFr& entity);
+	virtual void Render() override;
 	void initComponent();
 
 	//Getters
@@ -146,7 +146,7 @@ public:
 	virtual ~Image();
 
 	void initComponent();
-	inline void Render() override;
+	virtual void Render() override;
 
 	static SDL_Rect b_rect(const Vector2D& position, int width, int height)
 	{
@@ -178,7 +178,7 @@ public:
 
 	virtual ~AsteroidBehaviour();
 
-	void Update(EntityFr& ent);
+	virtual void Update(EntityFr& ent);
 	inline void Render();
 	void initComponent();
 	void takeDmg()
