@@ -3,6 +3,8 @@
 #include "Component.hpp"
 #include "Manager.hpp"
 
+auto& inH = *InputHandler::instance();
+
 void Component::Render()
 {
 
@@ -16,10 +18,10 @@ void Component::Update()
 void TransformComponent::initComponent()
 {
 	
-	position_.setX(0);
-	position_.setY(0);
-	velocity_.setX(0);
-	velocity_.setY(0);
+	position_.setX(x_);
+	position_.setY(y_);
+	velocity_.setX(vX_);
+	velocity_.setY(vY_);
 	width_ = 32;
 	height_ = 32;
 	angle_ = 0;
@@ -28,19 +30,51 @@ void TransformComponent::initComponent()
 
 void TransformComponent::Update(EntityFr& ent)
 {
-	position_.setX(x_);
-	position_.setY(y_);
+
+	float rad;
+
+	if (inH.isKeyDown(SDL_SCANCODE_W))
+	{
+		rad = angle_ * (M_PI / 180.0);
+
+		vX_ = sin(rad) * speed_;
+		vY_ = -cos(rad) * speed_;
+
+		velocity_.setX(vX_);
+		velocity_.setY(vY_);
+
+		// Update position with updated velocity
+		position_ = position_ + velocity_;
+	}
 	
-	velocity_.setX(vX_);
-	velocity_.setY(vX_);
 
-	position_ = position_ + velocity_;
+	if (inH.isKeyDown(SDL_SCANCODE_A))
+	{
+		// Update velocity if needed
+		
+		angle_ -= 5;
+	}
+	
 
+	if (inH.isKeyDown(SDL_SCANCODE_D))
+	{
+		// Update velocity if needed
+		
+		angle_ += 5;
+	}
+	
+	if (inH.getKeyUp())
+	{
+		velocity_.setX(0);
+		velocity_.setY(0);
+		position_ = position_ + velocity_;
 
+	}
 
-	Vector2D pos = getPosition();
+	//velocity_.setX(0);
+	//velocity_.setY(0);
 
-	//cout << "if this shit's updating, then I should see this fckng message somewhere" << endl;
+	setPosition(position_);
 
 }
 
@@ -68,6 +102,7 @@ void Image::Render()
 	SDL_Rect dest = b_rect(transform_->getPosition(), transform_->getW(), transform_->getH());
 
 	texture_->render(dest, transform_->getAngle());
+
 
 }
 

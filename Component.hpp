@@ -39,8 +39,8 @@ class TransformComponent : public Component
 
 public:
 
-	TransformComponent(EntityFr* entity, float x, float y, float a, int w = 1, int h= 1)
-		:entity_(entity), position_(Vector2D(x_ = x, y_ = y)), velocity_(Vector2D(vX_, vY_)), angle_(a), width_(w), height_(h)
+	TransformComponent(EntityFr* entity, float a, int w = 1, int h= 1)
+		:entity_(entity), position_(Vector2D(x_, y_)), velocity_(Vector2D(vX_, vY_)), angle_(a), width_(w), height_(h)
 	{}
 
 	virtual void Update(EntityFr& entity);
@@ -56,6 +56,10 @@ public:
 	inline SDL_Rect getSize() const
 	{
 		return size_;
+	}
+	inline float getSpeed()
+	{
+		return speed_;
 	}
 	inline float getAngle()
 	{
@@ -146,6 +150,7 @@ private:
 	SDL_Rect size_;
 
 	float angle_;
+	float speed_ = 5;
 	int width_;
 	int height_;
 

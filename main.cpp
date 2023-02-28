@@ -69,10 +69,10 @@ int main(int argc, const char **argv[])
 	ship->setName("ship");
 	ship->setAlive(true);
 	auto shipTx = new Texture(renderer, "resources/ShipSprites/Ship1.png");
-	auto shipComp = ship->addComponent<TransformComponent>(_Transform, ship, 100, 100, 90, 64, 64);
+	auto shipComp = ship->addComponent<TransformComponent>(_Transform, ship , 0, 64, 64);
 	//shipComp->setX(winWidth / 2 - shipComp->getW()/2);
 	//shipComp->setY(winWidth / 2 - shipComp->getH() / 2);
-	shipComp->setAngle(90);
+	shipComp->setAngle(0);
 	shipComp->setWidth(64);
 	shipComp->setHeight(64);
 	ship->addComponent<Image>(_frmImage, shipTx);
