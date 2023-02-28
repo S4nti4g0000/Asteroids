@@ -72,14 +72,14 @@ public:
 		return height_;
 	}
 
-	inline float getX_(float x)
+	inline float getX_()
 	{
-		x_ = x;
+		return x_;
 	}
 	
-	inline float getY_(float y)
+	inline float getY_()
 	{
-		y_ = y;
+		return y_;
 	}
 
 
@@ -103,6 +103,16 @@ public:
 	inline void setHeight(float height)
 	{
 		height_ = height;
+	}
+
+	inline void setX(float x)
+	{
+		x_ = x;
+	}
+
+	inline void setY(float y)
+	{
+		y_ = y;
 	}
 
 	virtual ~TransformComponent() {}
@@ -136,9 +146,9 @@ public:
 	virtual ~Image();
 
 	void initComponent();
-	inline void Render();
+	inline void Render() override;
 
-	SDL_Rect b_rect(const Vector2D& position, int width, int height)
+	static SDL_Rect b_rect(const Vector2D& position, int width, int height)
 	{
 		SDL_Rect rect;
 		rect.x = position.getX();
@@ -155,3 +165,41 @@ private:
 	Texture* texture_;
 
 };
+
+
+
+class AsteroidBehaviour: public Component
+{
+
+public:
+
+	AsteroidBehaviour(float speed, bool dmg, int h): speed_(speed), dmg_(dmg),health_(h), entity_(nullptr)
+	{}
+
+	virtual ~AsteroidBehaviour();
+
+	void Update(EntityFr& ent);
+	inline void Render();
+	void initComponent();
+	void takeDmg()
+	{
+		health_--;
+	}
+
+	bool isDestroyed()
+	{
+		return health_<=0;
+	}
+
+	inline int getAsHealth()
+	{
+		return health_;
+	}
+
+private:
+
+	float speed_;
+	bool dmg_;
+	int health_ = 1;
+
+}

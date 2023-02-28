@@ -66,6 +66,7 @@ int main(int argc, const char **argv[])
 	auto man_ = new Manager();
 
 	auto ship = man_->addEnts();
+	ship->setName("ship");
 	auto shipTx = new Texture(renderer, "resources/ShipSprites/Ship1.png");
 	auto shipComp = ship->addComponent<TransformComponent>(_Transform, ship, 0, 0, 0, 32, 32);
 	ship->addComponent<Image>(_frmImage, shipTx);

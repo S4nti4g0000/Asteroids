@@ -50,6 +50,19 @@ public:
 	virtual void Refresh();
 	inline void Render();
 
+	EntityFr* getEntity(const std::string& name) const
+	{
+		for(auto entity: entities_)
+		{
+			if(entity->getName() == name)
+			{
+				return entity;
+			}
+		}
+
+		return nullptr;
+	}
+
 private:
 
 	EntityFr* ent;

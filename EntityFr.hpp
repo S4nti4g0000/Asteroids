@@ -3,6 +3,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <array>
+#include <algorithm>
 
 #include "Vector2D.hpp"
 #include "Math.hpp"
@@ -126,6 +127,17 @@ public:
 
 	inline void renderC();
 
+	//get the entity name
+
+	const std::string& getName() const
+	{
+		return name_;
+	}
+
+	inline void setName(const std::string& name)
+	{
+		name_ = name;
+	}
 private:
 
 	TransformComponent* tCompo_;
@@ -135,6 +147,8 @@ private:
 	SDL_Texture* entTexture;
 	SDL_Rect* cFrame;
 	Manager* mngr_;
+
+	std::string name_;
 
 	float velocity_;
 	bool aliveBoi;
