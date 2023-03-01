@@ -246,8 +246,11 @@ public:
 
 	Bullet(EntityFr* ent, float x, float y)
 		:entity_(ent), bPos_(Vector2D(bX_ = x, bY_ = y))
-	{
+	{	
 	}
+
+
+	virtual void Update(EntityFr* ent);
 
 	inline float getBullX()
 	{
@@ -266,5 +269,23 @@ private:
 	float bX_;
 	float bY_;
 
+
+};
+
+class WrapAroundComp : public Component
+{
+
+public:
+
+	WrapAroundComp(int scWidth, int scHeight)
+		:screenWidth_(scWidth), screenHeight_(scHeight)
+	{}
+
+	virtual void Update(EntityFr* ent);
+
+public:
+
+	int screenWidth_;
+	int screenHeight_;
 
 };

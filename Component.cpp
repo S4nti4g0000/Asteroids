@@ -13,6 +13,30 @@ void Component::Render()
 void Component::Update()
 {}
 
+//WrapAround--
+
+void WrapAroundComp::Update(EntityFr* ent)
+{
+	Vector2D& pos_ = ent->getComponent<TransformComponent>(_Transform)->getPosition();
+	if (pos_.getX() < 0)
+	{
+		pos_.setX(screenWidth_);
+	}
+	else if (pos_.getX() > screenWidth_)
+	{
+		pos_.setX(0);
+	}
+	if (pos_.getY() < 0)
+	{
+		pos_.setY(screenHeight_);
+	}
+	else if (pos_.getY() > screenHeight_)
+	{
+		pos_.setY(0);
+	}
+
+}
+
 //Transform Component--
 
 void TransformComponent::initComponent()
@@ -143,3 +167,6 @@ void AsteroidBehaviour::Update(EntityFr& ent)
 
 
 }
+
+//Bullet
+

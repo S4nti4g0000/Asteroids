@@ -88,6 +88,7 @@ int main(int argc, const char **argv[])
 
 	//Bullet components
 	
+
 	bullet->addComponent<Image>(_frmImage, fireTx);
 	bullet->setName("bullet");
 
