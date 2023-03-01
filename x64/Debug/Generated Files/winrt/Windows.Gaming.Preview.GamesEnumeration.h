@@ -749,4 +749,45 @@ WINRT_EXPORT namespace winrt::Windows::Gaming::Preview::GamesEnumeration
     {
         check_hresult((*(impl::abi_t<GameListChangedEventHandler>**)this)->Invoke(*(void**)(&game)));
     }
-    template <typename
+    template <typename L> GameListRemovedEventHandler::GameListRemovedEventHandler(L handler) :
+        GameListRemovedEventHandler(impl::make_delegate<GameListRemovedEventHandler>(std::forward<L>(handler)))
+    {
+    }
+    template <typename F> GameListRemovedEventHandler::GameListRemovedEventHandler(F* handler) :
+        GameListRemovedEventHandler([=](auto&&... args) { return handler(args...); })
+    {
+    }
+    template <typename O, typename M> GameListRemovedEventHandler::GameListRemovedEventHandler(O* object, M method) :
+        GameListRemovedEventHandler([=](auto&&... args) { return ((*object).*(method))(args...); })
+    {
+    }
+    template <typename O, typename M> GameListRemovedEventHandler::GameListRemovedEventHandler(com_ptr<O>&& object, M method) :
+        GameListRemovedEventHandler([o = std::move(object), method](auto&&... args) { return ((*o).*(method))(args...); })
+    {
+    }
+    template <typename O, typename M> GameListRemovedEventHandler::GameListRemovedEventHandler(weak_ref<O>&& object, M method) :
+        GameListRemovedEventHandler([o = std::move(object), method](auto&&... args) { if (auto s = o.get()) { ((*s).*(method))(args...); } })
+    {
+    }
+    inline auto GameListRemovedEventHandler::operator()(param::hstring const& identifier) const
+    {
+        check_hresult((*(impl::abi_t<GameListRemovedEventHandler>**)this)->Invoke(*(void**)(&identifier)));
+    }
+}
+namespace std
+{
+#ifndef WINRT_LEAN_AND_MEAN
+    template<> struct hash<winrt::Windows::Gaming::Preview::GamesEnumeration::IGameListEntry> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Gaming::Preview::GamesEnumeration::IGameListEntry2> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Gaming::Preview::GamesEnumeration::IGameListStatics> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Gaming::Preview::GamesEnumeration::IGameListStatics2> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Gaming::Preview::GamesEnumeration::IGameModeConfiguration> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Gaming::Preview::GamesEnumeration::IGameModeUserConfiguration> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Gaming::Preview::GamesEnumeration::IGameModeUserConfigurationStatics> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Gaming::Preview::GamesEnumeration::GameList> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Gaming::Preview::GamesEnumeration::GameListEntry> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Gaming::Preview::GamesEnumeration::GameModeConfiguration> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Gaming::Preview::GamesEnumeration::GameModeUserConfiguration> : winrt::impl::hash_base {};
+#endif
+}
+#endif

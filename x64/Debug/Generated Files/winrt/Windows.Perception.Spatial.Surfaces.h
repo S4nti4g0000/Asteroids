@@ -508,4 +508,45 @@ WINRT_EXPORT namespace winrt::Windows::Perception::Spatial::Surfaces
     }
     inline auto SpatialSurfaceMeshOptions::SupportedVertexPositionFormats()
     {
-        return impl::call_factory_cast<winrt::Windows::Foundation::Co
+        return impl::call_factory_cast<winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::DirectX::DirectXPixelFormat>(*)(ISpatialSurfaceMeshOptionsStatics const&), SpatialSurfaceMeshOptions, ISpatialSurfaceMeshOptionsStatics>([](ISpatialSurfaceMeshOptionsStatics const& f) { return f.SupportedVertexPositionFormats(); });
+    }
+    inline auto SpatialSurfaceMeshOptions::SupportedTriangleIndexFormats()
+    {
+        return impl::call_factory_cast<winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::DirectX::DirectXPixelFormat>(*)(ISpatialSurfaceMeshOptionsStatics const&), SpatialSurfaceMeshOptions, ISpatialSurfaceMeshOptionsStatics>([](ISpatialSurfaceMeshOptionsStatics const& f) { return f.SupportedTriangleIndexFormats(); });
+    }
+    inline auto SpatialSurfaceMeshOptions::SupportedVertexNormalFormats()
+    {
+        return impl::call_factory_cast<winrt::Windows::Foundation::Collections::IVectorView<winrt::Windows::Graphics::DirectX::DirectXPixelFormat>(*)(ISpatialSurfaceMeshOptionsStatics const&), SpatialSurfaceMeshOptions, ISpatialSurfaceMeshOptionsStatics>([](ISpatialSurfaceMeshOptionsStatics const& f) { return f.SupportedVertexNormalFormats(); });
+    }
+    inline SpatialSurfaceObserver::SpatialSurfaceObserver() :
+        SpatialSurfaceObserver(impl::call_factory_cast<SpatialSurfaceObserver(*)(winrt::Windows::Foundation::IActivationFactory const&), SpatialSurfaceObserver>([](winrt::Windows::Foundation::IActivationFactory const& f) { return f.template ActivateInstance<SpatialSurfaceObserver>(); }))
+    {
+    }
+    inline auto SpatialSurfaceObserver::RequestAccessAsync()
+    {
+        return impl::call_factory_cast<winrt::Windows::Foundation::IAsyncOperation<winrt::Windows::Perception::Spatial::SpatialPerceptionAccessStatus>(*)(ISpatialSurfaceObserverStatics const&), SpatialSurfaceObserver, ISpatialSurfaceObserverStatics>([](ISpatialSurfaceObserverStatics const& f) { return f.RequestAccessAsync(); });
+    }
+    inline auto SpatialSurfaceObserver::IsSupported()
+    {
+        return impl::call_factory_cast<bool(*)(ISpatialSurfaceObserverStatics2 const&), SpatialSurfaceObserver, ISpatialSurfaceObserverStatics2>([](ISpatialSurfaceObserverStatics2 const& f) { return f.IsSupported(); });
+    }
+}
+namespace std
+{
+#ifndef WINRT_LEAN_AND_MEAN
+    template<> struct hash<winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMesh> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshBuffer> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOptions> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceMeshOptionsStatics> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserver> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Perception::Spatial::Surfaces::ISpatialSurfaceObserverStatics2> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Perception::Spatial::Surfaces::SpatialSurfaceInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Perception::Spatial::Surfaces::SpatialSurfaceMesh> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshBuffer> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Perception::Spatial::Surfaces::SpatialSurfaceMeshOptions> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Perception::Spatial::Surfaces::SpatialSurfaceObserver> : winrt::impl::hash_base {};
+#endif
+}
+#endif

@@ -665,4 +665,30 @@ WINRT_EXPORT namespace winrt::Windows::Security::Authentication::Identity::Provi
     }
     inline auto SecondaryAuthenticationFactorRegistration::UpdateDeviceConfigurationDataAsync(param::hstring const& deviceId, winrt::Windows::Storage::Streams::IBuffer const& deviceConfigurationData)
     {
-        return impl::call_factory<SecondaryAuthenticationFactorRegistration, ISecondaryAuthenticationFactorRegistrationStatics>([&](ISecondaryAuthenticationFactorReg
+        return impl::call_factory<SecondaryAuthenticationFactorRegistration, ISecondaryAuthenticationFactorRegistrationStatics>([&](ISecondaryAuthenticationFactorRegistrationStatics const& f) { return f.UpdateDeviceConfigurationDataAsync(deviceId, deviceConfigurationData); });
+    }
+}
+namespace std
+{
+#ifndef WINRT_LEAN_AND_MEAN
+    template<> struct hash<winrt::Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorAuthentication> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorAuthenticationResult> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorAuthenticationStageChangedEventArgs> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorAuthenticationStageInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorAuthenticationStatics> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorDevicePresenceMonitoringRegistrationStatics> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorInfo2> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorRegistration> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorRegistrationResult> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Security::Authentication::Identity::Provider::ISecondaryAuthenticationFactorRegistrationStatics> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthentication> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationResult> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationStageChangedEventArgs> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorAuthenticationStageInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorInfo> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorRegistration> : winrt::impl::hash_base {};
+    template<> struct hash<winrt::Windows::Security::Authentication::Identity::Provider::SecondaryAuthenticationFactorRegistrationResult> : winrt::impl::hash_base {};
+#endif
+}
+#endif

@@ -46,7 +46,7 @@ int main(int argc, const char **argv[])
 	//Window creation------------------------------------------------------------------------------
 	
 	rWindow window("Epic Space Game!", 800, 600);
-	SDL_Window* win;
+	//SDL_Window* win;
 
 	//Texture--------------------------------------------------------------------------------------
 
@@ -56,13 +56,19 @@ int main(int argc, const char **argv[])
 
 	//Entity---------------------------------------------------------------------------------------
 
-	int winWidth = window.getWidth();
-	int winHeight = window.getHeight();
+	int winWidth = 800;
+	int winHeight = 600;
 
 	auto x1 = 0;
 	auto y1 = 0;
 	auto vX = 1;
 	auto vY = 1;
+
+	//Input Handler -------------------------------------------------------------------------------
+
+	auto &ih = *InputHandler::instance();
+
+	Bullet* b;
 
 	//Textures
 
@@ -72,9 +78,9 @@ int main(int argc, const char **argv[])
 	//Manager
 
 	auto man_ = new Manager();
-
 	auto ship = man_->addEnts();
-	auto bullet = man_->addEnts();
+
+	//auto bullet = man_->addEnts();
 
 	//Ship components
 
@@ -93,24 +99,20 @@ int main(int argc, const char **argv[])
 	//Bullet components
 	
 
-	//bullet->addComponent<Image>(_frmImage, fireTx);
-	//bullet->setName("bullet");
-	//bullet->setName("bullet");
-
+	/*auto bulletComp = bullet->addComponent<TransformComponent>(_Transform, bullet, 0, 10, 10);
+	bullet->addComponent<Image>(_frmImage, fireTx);	
+	bullet->addComponent<Bullet>(_bullet, bullet, 1, winWidth, winHeight);
+	
+	bullet->setName("bullet");
+	bullet->setAlive(true);*/
+	
 	
 
 	//transform()->setPosition(Vector2D(0,0));
 
 	//Game loop------------------------------------------------------------------------------------
 
-	SDL_Event running;
-
-
-	//Input Handler -------------------------------------------------------------------------------
-
-	auto &ih = *InputHandler::instance();
-
-	
+	SDL_Event running;	
 
 	//Performance----------------------------------------------------------------------------------
 
@@ -139,12 +141,7 @@ int main(int argc, const char **argv[])
 
 		//----
 
-		ih.refresh();
-
-		if (ih.getKeyDown())
-			cout << "Key down" << endl;
-		
-			
+		ih.refresh();			
 
 		if (ih.isKeyDown(SDL_SCANCODE_ESCAPE))
 		{
@@ -176,18 +173,31 @@ int main(int argc, const char **argv[])
 		ship->renderC();
 		ship->updateC();
 		shipComp->Update(*ship);
-	
-
-		//shipTexture.render(x1, y1);
-		if (ih.isKeyDown(SDL_SCANCODE_D))
-		{
-			cout << "Key is D" << endl;
-			x1 = (x1 + 5) % winWidth;
-		}
+		//bulletComp->Update(*bullet);
 
 		window.display();
 
-		//inputHandler_.processInput(key);
+		/*if (ih.isKeyDown(SDL_SCANCODE_SPACE))
+		{
+			cout << "bullet created" << endl;
+
+			auto bulletEnt = std::make_shared<EntityFr>();
+
+			Vector2D cPos = ship->getComponent<TransformComponent>(_Transform)->getPosition();
+			Vector2D cDir = ship->getComponent<TransformComponent>(_Transform)->getForward();
+
+			bulletEnt->addComponent<Bullet>(_bullet, bulletEnt.get(), fireTx);
+			bulletEnt->getComponent<TransformComponent>(_Transform)->setPosition(cPos);
+
+			cPos = cPos + cDir;
+			auto bulletImg = std::make_shared<Image>(fireTx);
+			bulletEnt->addComponent<Image>(_frmImage, fireTx);
+			bulletEnt->getComponent<TransformComponent>(_Transform)->setVelocity(cDir * 10.0f);
+
+			man_->addEnts();
+
+		}*/
+
 
 		int frTicks = SDL_GetTicks() - Ticks;
 

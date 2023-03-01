@@ -17,7 +17,7 @@ void Component::Update()
 
 void WrapAroundComp::Update(EntityFr& ent)
 {
-	entity_ = &ent;
+
 	Vector2D pos_ = entity_->getComponent<TransformComponent>(_Transform)->getPosition();
 	if (pos_.getX() < 0)
 	{
@@ -36,6 +36,8 @@ void WrapAroundComp::Update(EntityFr& ent)
 		pos_.setY(0);
 	}
 
+		entity_->getComponent<TransformComponent>(_Transform)->setPosition(pos_);
+	
 }
 
 void WrapAroundComp::initComponent()
@@ -104,11 +106,6 @@ void TransformComponent::Update(EntityFr& ent)
 	if (inH.isKeyDown(SDL_SCANCODE_A))
 	{		
 		angle_ -= 5;
-
-		acceleration_.setX(sin(angle_ * (M_PI / 180.0)) * accelerationMagnitude_);
-		acceleration_.setY(-cos(angle_ * (M_PI / 180.0)) * accelerationMagnitude_);
-
-		velocity_ = velocity_ + acceleration_;
 	}
 	
 
@@ -172,8 +169,28 @@ void AsteroidBehaviour::initComponent()
 void AsteroidBehaviour::Update(EntityFr& ent)
 {
 
-
 }
 
 //Bullet
 
+void Bullet::initComponent()
+{
+	
+}
+
+void Bullet::Update(EntityFr* ent)
+{
+
+	//Vector2D cPos = entity_->getComponent<TransformComponent>(_Transform)->getPosition();
+	//Vector2D cDir = entity_->getComponent<TransformComponent>(_Transform)->getForward() * speedB_;
+
+	//cPos = cPos + cDir;
+
+	//if (cPos.getX() > wWidth_ && cPos.getY() > hHeight_)
+		//entity_->setAlive(false);
+
+
+
+	//entity_->getComponent<TransformComponent>(_Transform)->setPosition(cPos);
+		
+}

@@ -31,6 +31,8 @@ protected:
 
 	EntityFr* entity_;
 	Manager* manager_;
+	Vector2D position_;
+	Vector2D velocity_;
 
 };
 
@@ -48,6 +50,10 @@ public:
 	void initComponent();
 
 	//Getters
+	Vector2D getVector2D()const 
+	{
+		return Vector2D();
+	}
 
 	inline Vector2D getPosition() const
 	{
@@ -92,11 +98,23 @@ public:
 		return vY_;
 	}
 
+	Vector2D getForward()
+	{
+		float rad = angle_ * (M_PI / 180.0f);
+		return Vector2D(std::sin(rad), -std::cos(rad)).getNormalized();
+	}
+
+
 	//Setters
 
 	inline void setPosition(const Vector2D& position)
 	{
 		position_ = position;
+	}
+
+	inline void setVelocity(const Vector2D& v)
+	{
+		velocity_ = v;
 	}
 
 	inline void setAngle(float angle)
@@ -138,12 +156,13 @@ public:
 	virtual ~TransformComponent() {}
 
 
+	
 private:
 
 	EntityFr* entity_;
+	Vector2D acceleration_;
 	Vector2D position_;
 	Vector2D velocity_;
-	Vector2D acceleration_;
 	SDL_Rect size_;
 
 	float angle_;
@@ -151,7 +170,7 @@ private:
 	float rotateSpeed_ = 0.5;
 
 	float accelerationMagnitude_ = 0.1;
-	float decelerationMagnitude_ = 0.5;
+	float decelerationMagnitude_ = 1;
 	float maxSpeed_ = 5;
 	float currSpeed_ = 0;
 	float friction_ = 0.95;
@@ -173,6 +192,10 @@ class Image : public Component
 public:
 
 	Image(Texture* tex) : transform_(nullptr), texture_(tex)
+	{
+	}
+	
+	Image() : transform_(nullptr), texture_(nullptr)
 	{
 	}
 
@@ -244,31 +267,53 @@ class Bullet : public Component
 
 public:
 
-	Bullet(EntityFr* ent, float x, float y)
-		:entity_(ent), bPos_(Vector2D(bX_ = x, bY_ = y))
+	Bullet(EntityFr* ent, Texture* tex)
+		:entity_(ent), a(tex)
 	{	
 	}
 
 	void initComponent();
 	virtual void Update(EntityFr* ent);
 
-	inline float getBullX()
+	//getters
+
+	inline float getSp() const
 	{
-		return bX_;
+		return speedB_;
 	}
-	inline float getBullY()
+	inline int getWd() const
 	{
-		return bY_;
+		return wWidth_;
+	}
+	inline int getHg() const
+	{
+		return hHeight_;
+	}
+
+	//setters
+
+	inline void setSP_(float vel)
+	{
+		speedB_ = vel;
+	}
+	inline void setWi_(int w)
+	{
+		wWidth_ = w;
+	}
+	inline void setHe_(int h)
+	{
+		hHeight_ = h;
 	}
 
 private:
 
 	EntityFr* entity_;
 	Vector2D bPos_;
+	Texture* a;
 
-	float bX_;
-	float bY_;
-
+	float speedB_ = 10.0f;
+	int wWidth_ = 800;
+	int hHeight_ = 600;
 
 };
 

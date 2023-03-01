@@ -13,6 +13,7 @@ enum comId : cmpId_type
 	_brkAsteroid,
 	_follow,
 	_reappear,
+	_bullet,
 
 	_last_cmp_id
 };
