@@ -249,7 +249,7 @@ public:
 	{	
 	}
 
-
+	void initComponent();
 	virtual void Update(EntityFr* ent);
 
 	inline float getBullX()
@@ -281,9 +281,11 @@ public:
 		:screenWidth_(scWidth), screenHeight_(scHeight)
 	{}
 
-	virtual void Update(EntityFr* ent);
+	void initComponent();
+	virtual void Update(EntityFr& ent);
 
 public:
+
 
 	int screenWidth_;
 	int screenHeight_;

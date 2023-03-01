@@ -46,6 +46,7 @@ int main(int argc, const char **argv[])
 	//Window creation------------------------------------------------------------------------------
 	
 	rWindow window("Epic Space Game!", 800, 600);
+	SDL_Window* win;
 
 	//Texture--------------------------------------------------------------------------------------
 
@@ -55,8 +56,9 @@ int main(int argc, const char **argv[])
 
 	//Entity---------------------------------------------------------------------------------------
 
-	auto winWidth = window.daWidth_;
-	auto winHeight = window.daHeight_;
+	int winWidth = window.getWidth();
+	int winHeight = window.getHeight();
+
 	auto x1 = 0;
 	auto y1 = 0;
 	auto vX = 1;
@@ -78,19 +80,22 @@ int main(int argc, const char **argv[])
 
 	auto shipComp = ship->addComponent<TransformComponent>(_Transform, ship , 0, 64, 64);
 	ship->addComponent<Image>(_frmImage, shipTx);
+	ship->addComponent<WrapAroundComp>(_reappear, winWidth, winHeight);
+
 	ship->setName("ship");
 	ship->setAlive(true);
 	shipComp->setAngle(0);
 	shipComp->setWidth(64);
 	shipComp->setHeight(64);
-	shipComp->setPosition(Vector2D(0, 0));
+	shipComp->setPosition(Vector2D(winWidth / 2, winHeight/2));
 	shipComp->setContext(ship, man_);
 
 	//Bullet components
 	
 
-	bullet->addComponent<Image>(_frmImage, fireTx);
-	bullet->setName("bullet");
+	//bullet->addComponent<Image>(_frmImage, fireTx);
+	//bullet->setName("bullet");
+	//bullet->setName("bullet");
 
 	
 

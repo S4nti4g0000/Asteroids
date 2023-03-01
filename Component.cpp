@@ -15,9 +15,10 @@ void Component::Update()
 
 //WrapAround--
 
-void WrapAroundComp::Update(EntityFr* ent)
+void WrapAroundComp::Update(EntityFr& ent)
 {
-	Vector2D& pos_ = ent->getComponent<TransformComponent>(_Transform)->getPosition();
+	entity_ = &ent;
+	Vector2D pos_ = entity_->getComponent<TransformComponent>(_Transform)->getPosition();
 	if (pos_.getX() < 0)
 	{
 		pos_.setX(screenWidth_);
@@ -34,6 +35,12 @@ void WrapAroundComp::Update(EntityFr* ent)
 	{
 		pos_.setY(0);
 	}
+
+}
+
+void WrapAroundComp::initComponent()
+{
+
 
 }
 

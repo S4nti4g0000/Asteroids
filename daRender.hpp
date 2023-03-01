@@ -27,8 +27,6 @@ public:
 	//-----
 
 	rWindow(const char* daWindowTitle, int daWidth, int daHeight);
-	int daWidth_;
-	int daHeight_;
 
 	//-----
 
@@ -49,6 +47,14 @@ public:
 
 	//-----
 
+	inline int getWidth() const
+	{
+		return daWidth_;
+	}
+	inline int getHeight() const
+	{
+		return daWidth_;
+	}
 
 
 	//virtual ~rWindow();
@@ -59,6 +65,8 @@ private:
 	void initSDLExt();
 	void killAllYourFriends();
 
+	int daWidth_;
+	int daHeight_;
 	//float width, height;
 
 	EntityFr* entity;

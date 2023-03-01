@@ -6,7 +6,7 @@
 
 
 rWindow::rWindow(const char* daWindowTitle, int daWidth, int daHeight)
-	:window(NULL), renderer_(NULL)
+	:window(NULL), renderer_(NULL), daWidth_(daWidth), daHeight_(daHeight)
 {
 
 	//Spawns the window on screen using the pointer defined in the hpp file
