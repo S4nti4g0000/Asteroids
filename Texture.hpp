@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <unordered_map>
 
 #include "Singleton.hpp"
 //#include "EntityFr.hpp"
@@ -38,7 +39,6 @@ public:
 	{
 		return tHeight_;
 	}
-
 	/*inline SDL_Rect b_rect(const Vector2D& pos, int w, int h)
 	{
 		return SDL_Rect{ static_cast<int>(pos.getX(), -w / 2), static_cast<int>(pos.getY(), -h / 2) };
@@ -89,3 +89,35 @@ private:
 	int tHeight_;
 
 };
+
+class TextureManager: public Singleton<TextureManager>
+{
+	friend Singleton<TextureManager>;
+public:
+
+	static TextureManager& getInstance()
+	{
+		static TextureManager instance;
+		return instance;
+	}
+
+	TextureManager(const TextureManager&) = delete;
+	TextureManager& operator=(const TextureManager&) = delete;
+
+	bool loadTexture(SDL_Renderer* renderer, const std::string& path, const std::string& id);
+	void clear();
+	void draw(const std::string& id, const SDL_Rect& src, const SDL_Rect& dest, double angle = 0.0, const SDL_Point* center = nullptr, SDL_RendererFlip flip = SDL_FLIP_NONE);
+	void draw(const std::string& id, const SDL_Rect& src, const SDL_Rect& dest);
+	void draw(const std::string& id, int x, int y);
+	void draw(const std::string& id, const SDL_Rect& dest, float rotation);
+
+private:
+	TextureManager() {}
+	std::unordered_map<std::string, Texture*> textureMap_;
+
+};
+
+inline TextureManager& tm()
+{
+	return *TextureManager::instance();
+}

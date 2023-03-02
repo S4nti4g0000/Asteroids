@@ -15,25 +15,25 @@ void Component::Update()
 
 //WrapAround--
 
-void WrapAroundComp::Update(EntityFr& ent)
+void WrapAroundComp::Update()
 {
-
+	cout << "updating comp" << endl;
 	Vector2D pos_ = entity_->getComponent<TransformComponent>(_Transform)->getPosition();
-	if (pos_.getX() < 0)
+	if (pos_.getX() < -64)
 	{
-		pos_.setX(screenWidth_);
+		pos_.setX(screenWidth_ + 64);
 	}
-	else if (pos_.getX() > screenWidth_)
+	else if (pos_.getX() > screenWidth_ + 64)
 	{
-		pos_.setX(0);
+		pos_.setX(-64);
 	}
-	if (pos_.getY() < 0)
+	if (pos_.getY() < -64)
 	{
-		pos_.setY(screenHeight_);
+		pos_.setY(screenHeight_ + 64);
 	}
-	else if (pos_.getY() > screenHeight_)
+	else if (pos_.getY() > screenHeight_ + 64)
 	{
-		pos_.setY(0);
+		pos_.setY(-64);
 	}
 
 		entity_->getComponent<TransformComponent>(_Transform)->setPosition(pos_);
@@ -61,7 +61,7 @@ void TransformComponent::initComponent()
 
 }
 
-void TransformComponent::Update(EntityFr& ent)
+void TransformComponent::Update()
 {
 
 	float rad;
@@ -85,15 +85,15 @@ void TransformComponent::Update(EntityFr& ent)
 	if (inH.isKeyUp(SDL_SCANCODE_W))
 	{
 		float currentAccelerationMag = acceleration_.getLength();
-		if (currentAccelerationMag > 0.0f)
+		if (currSpeed_ > 0.0f)
 		{
 			float decel = decelerationMagnitude_ * inH.deltaTime();
-			float decelerationMag = std::min(currentAccelerationMag, decel);
+			float decelerationMag = std::min(currSpeed_, decel);
 			Vector2D deceleration = acceleration_.getNormalized() * decelerationMag;
 			acceleration_ = acceleration_ - deceleration;
 		}
 
-		velocity_ = velocity_ + acceleration_;
+		velocity_ = velocity_ - acceleration_;
 		position_ = position_ + velocity_;
 	}
 	
@@ -161,14 +161,36 @@ void Image::Render()
 
 //Normal Asteroid logic--
 
-void AsteroidBehaviour::initComponent()
+void AsteroidComp::Render()
 {
-	entity_ = manager_->getEntity("ship");
+
 }
 
-void AsteroidBehaviour::Update(EntityFr& ent)
-{
+//framed image
 
+void framedImage::initComponent()
+{
+	TransformComponent* tran = entity_->getComponent<TransformComponent>(_Transform);
+
+	tran->setX(srcRect_.x);
+	tran->setX(srcRect_.y);
+	tran->setWidth(srcRect_.w);
+	tran->setHeight(srcRect_.h);
+
+
+}
+
+void framedImage::Render(SDL_Renderer* ren, TransformComponent* trn)
+{
+	SDL_Rect dstRect = {
+
+		static_cast<int>(trn->getPosition().getX()),
+		static_cast<int>(trn->getPosition().getY()),
+		srcRect_.w * trn->getSize().x,
+		srcRect_.h * trn->getSize().y
+	};
+
+	SDL_RenderCopy(ren, frTexture_, &srcRect_, &dstRect);
 }
 
 //Bullet
@@ -178,19 +200,36 @@ void Bullet::initComponent()
 	
 }
 
-void Bullet::Update(EntityFr* ent)
+void Bullet::Update()
 {
 
-	//Vector2D cPos = entity_->getComponent<TransformComponent>(_Transform)->getPosition();
-	//Vector2D cDir = entity_->getComponent<TransformComponent>(_Transform)->getForward() * speedB_;
+	/*Vector2D cPos = entity_->getComponent<TransformComponent>(_Transform)->getPosition();
+	Vector2D cDir = entity_->getComponent<TransformComponent>(_Transform)->getForward() * speedB_;
 
 	//cPos = cPos + cDir;
 
-	//if (cPos.getX() > wWidth_ && cPos.getY() > hHeight_)
-		//entity_->setAlive(false);
+	if (cPos.getX() > wWidth_ && cPos.getY() > hHeight_)
+		entity_->setAlive(false);
 
 
 
-	//entity_->getComponent<TransformComponent>(_Transform)->setPosition(cPos);
+	entity_->getComponent<TransformComponent>(_Transform)->setPosition(cPos);
+	if (inH.isKeyDown(SDL_SCANCODE_SPACE))
+	{
+		cout << "bullet created" << endl;
+
+		auto bulletEnt = std::make_shared<EntityFr>();
+
+		Vector2D cPos = entity_->getComponent<TransformComponent>(_Transform)->getPosition();
+		Vector2D cDir = entity_->getComponent<TransformComponent>(_Transform)->getForward();
+
+		bulletEnt->addComponent<Bullet>(_bullet, bulletEnt.get());
+		bulletEnt->getComponent<TransformComponent>(_Transform)->setPosition(cPos);
+
+		cPos = cPos + cDir;
+
+		//manager_->addEnts();
+
+	}*/
 		
 }

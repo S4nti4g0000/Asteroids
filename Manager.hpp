@@ -47,9 +47,9 @@ public:
 	//methods
 
 	virtual EntityFr* addEnts();
-	inline void Update();
+	virtual void Update();
 	virtual void Refresh();
-	inline void Render();
+	virtual void Render();
 
 	EntityFr* getEntity(const std::string& name);
 

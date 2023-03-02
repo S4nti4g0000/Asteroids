@@ -35,7 +35,6 @@ int main(int argc, const char **argv[])
 
 	double angle = 45.0;
 
-	//Error stuff----------------------------------------------------------------------------------
 
 	if (SDL_Init(SDL_INIT_VIDEO) > 0)
 		cout << "Bro, your video failed somewhere! CODE: " << SDL_GetError() << endl;
@@ -43,18 +42,13 @@ int main(int argc, const char **argv[])
 	if(!(IMG_Init(IMG_INIT_PNG)))
 		cout << "Dude there's an error with the image! CODE: " << SDL_GetError() << endl;
 
-	//Window creation------------------------------------------------------------------------------
 	
 	rWindow window("Epic Space Game!", 800, 600);
-	//SDL_Window* win;
-
-	//Texture--------------------------------------------------------------------------------------
 
 	SDL_Renderer* renderer = window.renderer();
 	Texture shipTexture(renderer, "resources/ShipSprites/Ship1.png");
 	//Texture asteroidTexture(renderer, "resources/images/AstImg.png");
 
-	//Entity---------------------------------------------------------------------------------------
 
 	int winWidth = 800;
 	int winHeight = 600;
@@ -64,21 +58,31 @@ int main(int argc, const char **argv[])
 	auto vX = 1;
 	auto vY = 1;
 
-	//Input Handler -------------------------------------------------------------------------------
+	//----
+
+	SDL_Rect src = {32,32,64,64};
+
+	//-----
 
 	auto &ih = *InputHandler::instance();
+	auto& tm = *TextureManager::instance();
 
 	Bullet* b;
 
 	//Textures
 
 	auto shipTx = new Texture(renderer, "resources/ShipSprites/Ship1.png");
-	auto fireTx = new Texture(renderer, "resources/images/fire.png");
+	auto astTx = new Texture(renderer, "resources/images/asteroid.png");
+
+	tm.loadTexture(renderer, "resources/images/asteroid.png", "one");
 
 	//Manager
 
 	auto man_ = new Manager();
-	auto ship = man_->addEnts();
+	auto manB_ = new Manager();
+	EntityFr* ship = man_->addEnts();
+	EntityFr* asteroid = man_->addEnts();
+	auto bullet = manB_->addEnts();
 
 	//auto bullet = man_->addEnts();
 
@@ -86,7 +90,10 @@ int main(int argc, const char **argv[])
 
 	auto shipComp = ship->addComponent<TransformComponent>(_Transform, ship , 0, 64, 64);
 	ship->addComponent<Image>(_frmImage, shipTx);
-	ship->addComponent<WrapAroundComp>(_reappear, winWidth, winHeight);
+	ship->addComponent<WrapAroundComp>(_reappear, winWidth -64, winHeight - 64);
+
+	ship->getComponent<TransformComponent>(_Transform)->setContext(ship, man_);
+	ship->getComponent<Image>(_frmImage)->setContext(ship, man_);
 
 	ship->setName("ship");
 	ship->setAlive(true);
@@ -96,25 +103,16 @@ int main(int argc, const char **argv[])
 	shipComp->setPosition(Vector2D(winWidth / 2, winHeight/2));
 	shipComp->setContext(ship, man_);
 
-	//Bullet components
-	
+	//asteroid
 
-	/*auto bulletComp = bullet->addComponent<TransformComponent>(_Transform, bullet, 0, 10, 10);
-	bullet->addComponent<Image>(_frmImage, fireTx);	
-	bullet->addComponent<Bullet>(_bullet, bullet, 1, winWidth, winHeight);
-	
-	bullet->setName("bullet");
-	bullet->setAlive(true);*/
-	
-	
+	auto astComp = asteroid->addComponent<TransformComponent>(_Transform, asteroid, 0, 32, 32);
+	asteroid->setName("asteroid");
+	asteroid->addComponent<framedImage>(_framed, astTx, src.x, src.y, src.w, src.h);
+	asteroid->getComponent<TransformComponent>(_Transform)->setX(0);
+	asteroid->getComponent<TransformComponent>(_Transform)->setY(0);
 
 	//transform()->setPosition(Vector2D(0,0));
-
-	//Game loop------------------------------------------------------------------------------------
-
 	SDL_Event running;	
-
-	//Performance----------------------------------------------------------------------------------
 
 	const float tS = 0.01f;
 	float acc = 0.0f;
@@ -170,33 +168,17 @@ int main(int argc, const char **argv[])
 		//ih().init();
 
 		window.clearScreen();
-		ship->renderC();
+		man_->Update();
+		man_->Render();
 		ship->updateC();
-		shipComp->Update(*ship);
+		ship->renderC();
+		//shipComp->Update(*ship);
 		//bulletComp->Update(*bullet);
+		//astComp->Render();
 
 		window.display();
 
-		/*if (ih.isKeyDown(SDL_SCANCODE_SPACE))
-		{
-			cout << "bullet created" << endl;
-
-			auto bulletEnt = std::make_shared<EntityFr>();
-
-			Vector2D cPos = ship->getComponent<TransformComponent>(_Transform)->getPosition();
-			Vector2D cDir = ship->getComponent<TransformComponent>(_Transform)->getForward();
-
-			bulletEnt->addComponent<Bullet>(_bullet, bulletEnt.get(), fireTx);
-			bulletEnt->getComponent<TransformComponent>(_Transform)->setPosition(cPos);
-
-			cPos = cPos + cDir;
-			auto bulletImg = std::make_shared<Image>(fireTx);
-			bulletEnt->addComponent<Image>(_frmImage, fireTx);
-			bulletEnt->getComponent<TransformComponent>(_Transform)->setVelocity(cDir * 10.0f);
-
-			man_->addEnts();
-
-		}*/
+		/**/
 
 
 		int frTicks = SDL_GetTicks() - Ticks;
@@ -207,6 +189,7 @@ int main(int argc, const char **argv[])
 			SDL_Delay(1000 / window.getRefreshRate() - frTicks);
 
 		}
+		man_->Refresh();
 
 	}
 

@@ -124,7 +124,6 @@ public:
 	//Call update and render of all components
 
 	void updateC();
-
     void renderC();
 
 	//get the entity name

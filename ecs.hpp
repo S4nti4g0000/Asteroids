@@ -14,6 +14,7 @@ enum comId : cmpId_type
 	_follow,
 	_reappear,
 	_bullet,
+	_framed,
 
 	_last_cmp_id
 };

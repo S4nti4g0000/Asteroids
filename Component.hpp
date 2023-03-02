@@ -8,7 +8,7 @@
 class EntityFr;
 class Manager;
 
-class Component
+class Component 
 {
 
 public:
@@ -42,10 +42,10 @@ class TransformComponent : public Component
 public:
 
 	TransformComponent(EntityFr* entity, float a, int w = 1, int h= 1)
-		:entity_(entity), position_(Vector2D(x_, y_)), velocity_(Vector2D(vX_, vY_)), angle_(a), targetAngle_(a), width_(w), height_(h)
+		:entity_(entity), position_(Vector2D(x_, y_)), velocity_(Vector2D(vX_, vY_)), angle_(a), width_(w), height_(h)
 	{}
 
-	virtual void Update(EntityFr& entity);
+	virtual void Update();
 	virtual void Render() override;
 	void initComponent();
 
@@ -166,15 +166,14 @@ private:
 	SDL_Rect size_;
 
 	float angle_;
-	float targetAngle_;
 	float rotateSpeed_ = 0.5;
 
-	float accelerationMagnitude_ = 0.1;
+	float accelerationMagnitude_ = 0.01;
 	float decelerationMagnitude_ = 1;
-	float maxSpeed_ = 5;
+	float maxSpeed_ = 3;
 	float currSpeed_ = 0;
 	float friction_ = 0.95;
-	//float acceleration_;
+
 	int width_;
 	int height_;
 
@@ -222,43 +221,44 @@ private:
 
 };
 
-
-
-class AsteroidBehaviour : public Component
+class AsteroidComp : public Component
 {
 
 public:
 
-	AsteroidBehaviour(float speed, bool dmg, int h) : speed_(speed), dmg_(dmg), health_(h), entity_(nullptr)
-	{}
+	enum type {a,b};
 
-	virtual ~AsteroidBehaviour();
-
-	virtual void Update(EntityFr& ent);
-	inline void Render();
-	void initComponent();
-	void takeDmg()
+	AsteroidComp(type t)
+		:t_(t)
 	{
-		health_--;
 	}
 
-	bool isDestroyed()
-	{
-		return health_ <= 0;
-	}
-
-	inline int getAsHealth()
-	{
-		return health_;
-	}
+	virtual void Update();
+	virtual void Render();
 
 private:
 
-	EntityFr* entity_;
+	type t_;
+	
 
-	float speed_;
-	bool dmg_;
-	int health_ = 1;
+};
+
+class framedImage : public Component
+{
+
+public:
+
+	framedImage(SDL_Texture* tex, SDL_Rect srcRect)
+		:frTexture_(tex), srcRect_(srcRect)
+	{}
+
+	void initComponent();
+	virtual void Render(SDL_Renderer* ren, TransformComponent* trn);
+
+private:
+
+	SDL_Texture* frTexture_;
+	SDL_Rect srcRect_;
 
 };
 
@@ -267,13 +267,13 @@ class Bullet : public Component
 
 public:
 
-	Bullet(EntityFr* ent, Texture* tex)
-		:entity_(ent), a(tex)
+	Bullet(EntityFr* ent)
+		:entity_(ent)
 	{	
 	}
 
 	void initComponent();
-	virtual void Update(EntityFr* ent);
+	virtual void Update();
 
 	//getters
 
@@ -309,6 +309,7 @@ private:
 
 	EntityFr* entity_;
 	Vector2D bPos_;
+	Manager* managerB_;
 	Texture* a;
 
 	float speedB_ = 10.0f;
@@ -327,10 +328,9 @@ public:
 	{}
 
 	void initComponent();
-	virtual void Update(EntityFr& ent);
+	virtual void Update();
 
 public:
-
 
 	int screenWidth_;
 	int screenHeight_;
