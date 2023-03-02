@@ -1,6 +1,8 @@
 #include "Manager.hpp"
 #include "EntityFr.hpp"
 
+using namespace ecs;
+
 class Manager;
 
 Manager::Manager()
@@ -8,7 +10,7 @@ Manager::Manager()
 	entities_.reserve(100);
 }
 
-EntityFr* Manager::addEnts()
+EntityFr* Manager::addEnts(grpId_type gId = ecs::_grp_General)
 {
 	EntityFr* e = new EntityFr();
 	//std::unique_ptr<EntityFr> uPtr{ e };
@@ -16,8 +18,13 @@ EntityFr* Manager::addEnts()
 	e->setAlive(true);
 	e->setContext(this);
 
-	entities_.push_back(e);
+	groups_[gId].push_back(e);
 	return e;
+}
+
+const auto& Manager::getEntities(grpId_type gId = ecs::_grp_General)
+{
+	return groups_[gId];
 }
 
 void Manager::Refresh()
@@ -40,22 +47,29 @@ void Manager::Refresh()
 	);
 }
 
+
 void Manager::Update()
 {
-	auto n = entities_.size();
-	for (auto i = 0; i < n; i++)
+	for (auto& ent : groups_)
 	{
-		entities_[i]->updateC();
-	}
+		auto n = entities_.size();
+		for (auto i = 0; i < n; i++)
+		{
+			entities_[i]->updateC();
+		}
+	}	
 }
 
 void Manager::Render()
 {
-	auto n = entities_.size();
-	for (auto i = 0; i < n; i++)
+	for (auto& ent : groups_)
 	{
-		entities_[i]->updateC();
-	}
+		auto n = entities_.size();
+		for (auto i = 0; i < n; i++)
+		{
+			entities_[i]->updateC();
+		}
+	}	
 }
 
 

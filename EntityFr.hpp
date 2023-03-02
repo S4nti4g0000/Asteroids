@@ -4,6 +4,7 @@
 #include <SDL_image.h>
 #include <array>
 #include <algorithm>
+#include <bitset>
 
 #include "Vector2D.hpp"
 #include "Math.hpp"
@@ -14,6 +15,7 @@
 #include "Component.hpp"
 #include "daRender.hpp"
 
+using namespace ecs;
 
 class Component;
 class TransformComponent;
@@ -28,7 +30,7 @@ public:
 		:tCompo_(), mngr_(nullptr), compId_(), aliveBoi(true)
 	{
 
-		cComps_.reserve(maxCompId);
+		cComps_.reserve(ecs::maxCompId);
 
 	}
 
@@ -152,7 +154,13 @@ private:
 	float velocity_;
 	bool aliveBoi;
 
+	//----
+			 
+	//
+
+	//----
+
 	std::vector<Component*> cComps_;
-	std::array<Component*, maxCompId> compId_;
+	std::array<Component*, ecs::maxCompId> compId_;
 
 };

@@ -17,7 +17,6 @@ void Component::Update()
 
 void WrapAroundComp::Update()
 {
-	cout << "updating comp" << endl;
 	Vector2D pos_ = entity_->getComponent<TransformComponent>(_Transform)->getPosition();
 	if (pos_.getX() < -64)
 	{
@@ -190,7 +189,23 @@ void framedImage::Render(SDL_Renderer* ren, TransformComponent* trn)
 		srcRect_.h * trn->getSize().y
 	};
 
-	SDL_RenderCopy(ren, frTexture_, &srcRect_, &dstRect);
+	if (SDL_GetTicks() - lastUpdate_ > animSpeed_)
+	{
+		//Big error	
+		//cFrame_ = (cFrame_ + 1) % numFrames_;
+		lastUpdate_ = SDL_GetTicks();
+	}
+
+	SDL_Rect cFrameRect = {
+		srcRect_.x + cFrame_ * srcRect_.w,
+		srcRect_.y,
+		srcRect_.w,
+		srcRect_.h
+
+	};
+
+	//Big error												
+	//SDL_RenderCopy(ren, frTexture_, cFrame_, &dstRect);
 }
 
 //Bullet

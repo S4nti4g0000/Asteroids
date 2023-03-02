@@ -25,7 +25,6 @@ namespace utils
 
 using namespace std;
 
-
 int main(int argc, const char **argv[])
 {
 
@@ -80,10 +79,11 @@ int main(int argc, const char **argv[])
 
 	auto man_ = new Manager();
 	auto manB_ = new Manager();
-	EntityFr* ship = man_->addEnts();
-	EntityFr* asteroid = man_->addEnts();
-	auto bullet = manB_->addEnts();
+	EntityFr* ship = man_->addEnts(_grp_General);
+	auto bullet = manB_->addEnts(_grp_Bullets);
 
+	
+	
 	//auto bullet = man_->addEnts();
 
 	//Ship components
@@ -105,12 +105,8 @@ int main(int argc, const char **argv[])
 
 	//asteroid
 
-	auto astComp = asteroid->addComponent<TransformComponent>(_Transform, asteroid, 0, 32, 32);
-	asteroid->setName("asteroid");
-	asteroid->addComponent<framedImage>(_framed, astTx, src.x, src.y, src.w, src.h);
-	asteroid->getComponent<TransformComponent>(_Transform)->setX(0);
-	asteroid->getComponent<TransformComponent>(_Transform)->setY(0);
-
+	
+	
 	//transform()->setPosition(Vector2D(0,0));
 	SDL_Event running;	
 
@@ -118,6 +114,20 @@ int main(int argc, const char **argv[])
 	float acc = 0.0f;
 	float cTime = utils::time();
 
+
+	for (int i = 0; i < 10; i++)
+	{
+		auto Asteroid = man_->addEnts(_grp_Asteroids);
+		auto AsteroidComp = Asteroid->addComponent<TransformComponent>(_Transform, Asteroid, 0, 32, 32);
+		//Asteroid->addComponent<framedImage>(_framed, astTx, src, 6, 50);
+		AsteroidComp->setX(winWidth / 2);
+		AsteroidComp->setY(winHeight / 2);
+		AsteroidComp->setWidth(64);
+		AsteroidComp->setHeight(64);
+
+		cout << "done?" << endl;
+
+	}
 
 	//GameLoop-------------------------------------------------------------------------------------
 
@@ -147,7 +157,7 @@ int main(int argc, const char **argv[])
 			itsAlive = false;
 		}
 
-
+		
 
 		//----
 
@@ -180,7 +190,7 @@ int main(int argc, const char **argv[])
 
 		/**/
 
-
+		
 		int frTicks = SDL_GetTicks() - Ticks;
 
 		if (frTicks < 1000 / window.getRefreshRate())

@@ -8,13 +8,15 @@ D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(127,12)
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(132,13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(209,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(210,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Manager.hpp(32,4): warning C4150: deletion of pointer to incomplete type 'EntityFr'; no destructor called
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Manager.hpp(17): message : see declaration of 'EntityFr'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Manager.hpp(33,4): warning C4150: deletion of pointer to incomplete type 'EntityFr'; no destructor called
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Manager.hpp(18): message : see declaration of 'EntityFr'
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\main.cpp(14,11): warning C4244: 'initializing': conversion from 'Uint32' to 'float', possible loss of data
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\main.cpp(103,56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\main.cpp(103,42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\main.cpp(70,10): warning C4101: 'b': unreferenced local variable
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(88,32): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\main.cpp(123,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\main.cpp(124,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\main.cpp(69,10): warning C4101: 'b': unreferenced local variable
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(90,32): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
           with
           [
               _Ty=int
@@ -24,9 +26,15 @@ D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\main.cpp(91): message
           [
               T=TransformComponent
           ]
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\EntityFr.hpp(88,15): error C2661: 'framedImage::framedImage': no overloaded function takes 5 arguments
-D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\main.cpp(110): message : see reference to function template instantiation 'T *EntityFr::addComponent<framedImage,Texture*&,int&,int&,int&,int&>(cmpId_type,Texture *&,int &,int &,int &,int &)' being compiled
-          with
-          [
-              T=framedImage
-          ]
+  Manager.cpp
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(171,31): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(175,18): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(73,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(78,10): warning C4244: 'return': conversion from 'const int' to 'float', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(103,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(127,12): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(132,13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(209,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\AYYLaNavesitaLol\Component.hpp(210,25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  AYYLaNavesitaLol.vcxproj -> D:\Homeworks\NavesitaLol\AYYLaNavesitaLol\x64\Debug\AYYLaNavesitaLol.exe

@@ -11,8 +11,9 @@
 #include "Vector2D.hpp"
 #include "Singleton.hpp"
 #include "Utils.hpp"
+#include "ecs.hpp"
 
-
+using namespace ecs;
 
 class EntityFr;
 
@@ -46,7 +47,9 @@ public:
 
 	//methods
 
-	virtual EntityFr* addEnts();
+	virtual EntityFr* addEnts(grpId_type gId);
+	const auto& getEntities(grpId_type gId);
+
 	virtual void Update();
 	virtual void Refresh();
 	virtual void Render();
@@ -57,6 +60,7 @@ private:
 
 	EntityFr* ent;
 
+	std::array<std::vector<EntityFr*>, ecs::maxGroupId> groups_;
 	std::vector<EntityFr*> entities_;
 
 };

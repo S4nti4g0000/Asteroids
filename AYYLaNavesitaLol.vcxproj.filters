@@ -51,6 +51,9 @@
     <ClCompile Include="Component.cpp">
       <Filter>Archivos de origen\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="AsteroidManager.cpp">
+      <Filter>Archivos de origen\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="daRender.hpp">
@@ -81,6 +84,9 @@
       <Filter>Archivos de origen\SDLUtils</Filter>
     </ClInclude>
     <ClInclude Include="EntityFr.hpp">
+      <Filter>Archivos de origen\SDLUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="AsteroidManager.hpp">
       <Filter>Archivos de origen\SDLUtils</Filter>
     </ClInclude>
   </ItemGroup>
