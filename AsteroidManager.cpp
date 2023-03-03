@@ -1,15 +1,14 @@
 #include "AsteroidManager.hpp"
 
-auto& ren_ = *rWindow::instance();
+//auto& ren_ = *rWindow::instance();
 
-void AsteroidManager::CreateAst(int n)
+int AsteroidManager::CreateAst(int n)
 {
 	
-
 	for (int i = 0; i < n; i++)
 	{
 		auto AstEnt = mngr_->addEnts(_grp_Asteroids);
-		auto astComp = AstEnt->addComponent<AsteroidComp>(_AsteroidC);
+		auto astComp = AstEnt->addComponent<AsteroidComp>(_AsteroidC, AsteroidComp::a);
 		AstEnt->addComponent<TransformComponent>(_Transform, AstEnt, 0, 32, 32);
 		//AstEnt->addComponent<Image>(_frmImage, AstEnt, texture_);
 		//AstEnt->addComponent<framedImage>(_framed, tex, src_, 6, 50);

@@ -3,6 +3,9 @@
 #include "daRender.hpp"
 #include "Manager.hpp"
 #include "EntityFr.hpp"
+#include "Component.hpp"
+
+//auto& ren = *rWindow::instance();
 
 class AsteroidManager
 {
@@ -11,12 +14,13 @@ public:
 		:mngr_(mngr)
 	{}
 
-	inline void CreateAst(int n);
+	inline int CreateAst(int n);
 	inline void addAsteroid();
 	inline void destroyAllAsteroid();
 	inline void onCollision(EntityFr* col);
 
 private:
+
 
 	EntityFr* ast;
 	Manager* mngr_;

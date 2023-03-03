@@ -47,7 +47,10 @@ int main(int argc, const char **argv[])
 	SDL_Window* window = SDL_CreateWindow("Epic Space Game!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
 		800, 600, SDL_WINDOW_SHOWN);
 
+	ren.setRender(SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC));
 	SDL_Renderer* renderer = ren.renderer();
+
+	//SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
 	//SDL_Renderer* renderer = window.renderer();
 
@@ -84,9 +87,7 @@ int main(int argc, const char **argv[])
 	auto manB_ = new Manager();
 	EntityFr* ship = man_->addEnts(_grp_General);
 	auto bullet = manB_->addEnts(_grp_Bullets);
-	AsteroidManager astMngr(man_);
-
-	
+	AsteroidManager* astMngr = new AsteroidManager(man_);
 	
 	//auto bullet = man_->addEnts();
 
@@ -109,7 +110,7 @@ int main(int argc, const char **argv[])
 
 	//asteroid
 
-	astMngr.CreateAst(10);
+	astMngr->CreateAst(10);
 	
 	//transform()->setPosition(Vector2D(0,0));
 	SDL_Event running;	

@@ -222,27 +222,25 @@ private:
 
 };
 
-	class AsteroidComp : public Component
-	{
+class AsteroidComp : public Component
+{
 
-	public:
+public:
 
-		enum type {a,b};
+	enum type {a,b};
 
-		AsteroidComp(type t = a)
-			:t_(a)
-		{
-		}
+	AsteroidComp(type t = a)
+		:t_(a){}
 
-		virtual void Update();
-		virtual void Render();
+	virtual void Update();
+	virtual void Render();
 
-	private:
+private:
 
-		type t_;
+	type t_;
 	
 
-	};
+};
 
 
 

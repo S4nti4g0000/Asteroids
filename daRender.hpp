@@ -58,6 +58,10 @@ public:
 		return window;
 	}
 
+	inline void setRender(SDL_Renderer* rend)
+	{
+		renderer_ = rend;
+	}
 	
 private:
 
