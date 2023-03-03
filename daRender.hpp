@@ -19,21 +19,16 @@ class EntityFr;
 
 //Window class and constructor to render the window with specific parameters (title and proportions)
 
-class rWindow
+class rWindow: public Singleton<rWindow>
 {
-
+	friend Singleton<rWindow>;
 public:
 
 	//-----
 
-	rWindow(const char* daWindowTitle, int daWidth, int daHeight);
-
-	//-----
-
-	//template<typename T>
-	//using sdl_resources = unordered_map<string, T>;
-		
 	int getRefreshRate();
+
+	SDL_Texture* loadTexture(const char* daPath);
 
 	void cleanUp();
 	void clearScreen();
@@ -56,17 +51,21 @@ public:
 		return daWidth_;
 	}
 
+	//-----
 
-	//virtual ~rWindow();
+	inline SDL_Window* getWindow() const
+	{
+		return window;
+	}
 
+	
 private:
-	void initWindow();
-	void closeWindow();
-	void initSDLExt();
-	void killAllYourFriends();
 
-	int daWidth_;
-	int daHeight_;
+	rWindow() = default;
+
+	const char* daWindowTitle_;
+	int daWidth_ = 800;
+	int daHeight_ = 600;
 	//float width, height;
 
 	EntityFr* entity;
@@ -74,3 +73,9 @@ private:
 	SDL_Renderer* renderer_;
 
 };
+
+
+inline rWindow& ren()
+{
+	return *rWindow::instance();
+}

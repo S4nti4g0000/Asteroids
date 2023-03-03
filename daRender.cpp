@@ -5,21 +5,12 @@
 
 
 
-rWindow::rWindow(const char* daWindowTitle, int daWidth, int daHeight)
-	:window(NULL), renderer_(NULL), daWidth_(daWidth), daHeight_(daHeight)
+/*rWindow::rWindow(const char* daWindowTitle, int daWidth, int daHeight)
+	:window(NULL), renderer_(NULL), daWindowTitle_(daWindowTitle), daWidth_(daWidth), daHeight_(daHeight)
 {
 
-	//Spawns the window on screen using the pointer defined in the hpp file
-	//first parameter title, then the on-screen position (x,y), then proportions
-	//lastly Uint32 flags, in this case, window states (shown, fullscreen, minimized, maximized, etc...)
-	//other flags here: https://wiki.libsdl.org/SDL2/SDL_WindowFlags
-
-	window = SDL_CreateWindow(daWindowTitle, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, daWidth, daHeight, SDL_WINDOW_SHOWN);
-
-	//"2D rendering context for a window"
-	//takes the just defined window, then the rendering driver (if set to -1 will take the default one)
-	//then flags.
-	//other renderer flags: https://wiki.libsdl.org/SDL2/SDL_RendererFlags
+	window = SDL_CreateWindow(daWindowTitle, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+		daWidth, daHeight, SDL_WINDOW_SHOWN);
 
 	renderer_ = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 	assert(renderer_ != nullptr);
@@ -32,10 +23,10 @@ rWindow::rWindow(const char* daWindowTitle, int daWidth, int daHeight)
 	daWidth_ = daWidth;
 	daHeight_ = daHeight;
 
-}
+}*/
 
 
-/*SDL_Texture* rWindow::loadTexture(const char* daPath)
+SDL_Texture* rWindow::loadTexture(const char* daPath)
 {
 
 	SDL_Texture* texture = NULL;
@@ -43,12 +34,12 @@ rWindow::rWindow(const char* daWindowTitle, int daWidth, int daHeight)
 
 	if (texture == NULL)
 	{
-		cout << "Nope, the texture did not load. CODE: " << SDL_GetError() << endl; 
+		cout << "Nope, the texture did not load. CODE: " << SDL_GetError() << endl;
 	}
 
 	return texture;
 
-}*/
+}
 
 int rWindow::getRefreshRate()
 {

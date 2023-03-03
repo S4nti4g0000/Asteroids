@@ -4,11 +4,11 @@
 #include "Manager.hpp"
 #include "EntityFr.hpp"
 
-
 class AsteroidManager
 {
 public:
-	AsteroidManager(EntityFr* ent, Manager* mngr_)
+	AsteroidManager(Manager* mngr)
+		:mngr_(mngr)
 	{}
 
 	inline void CreateAst(int n);
@@ -18,6 +18,11 @@ public:
 
 private:
 
+	EntityFr* ast;
 	Manager* mngr_;
+
+	SDL_Rect src_ = { 32,32,64,64 };
+
+	std::vector<EntityFr*>asteroids_;
 
 };

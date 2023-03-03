@@ -4,6 +4,7 @@
 #include "Manager.hpp"
 
 auto& inH = *InputHandler::instance();
+auto& ren_ = *rWindow::instance();
 
 void Component::Render()
 {
@@ -90,10 +91,15 @@ void TransformComponent::Update()
 			float decelerationMag = std::min(currSpeed_, decel);
 			Vector2D deceleration = acceleration_.getNormalized() * decelerationMag;
 			acceleration_ = acceleration_ - deceleration;
+			velocity_ = velocity_ - acceleration_;
+			position_ = position_ - velocity_;
+		}
+		currSpeed_ -= 0.5;
+		if (currSpeed_ < 0.5)
+		{
+			currSpeed_ = 0;
 		}
 
-		velocity_ = velocity_ - acceleration_;
-		position_ = position_ + velocity_;
 	}
 	
 	velocity_ = velocity_ + acceleration_;
@@ -115,11 +121,11 @@ void TransformComponent::Update()
 	
 	if (inH.getKeyUp())
 	{
-		currSpeed_ -= .5;
+		
 
 		velocity_.setX(velocity_.getX() * 0.95f);
 		velocity_.setY(velocity_.getY() * 0.95f);
-
+		
 
 		position_ = position_ + velocity_;
 
@@ -179,14 +185,14 @@ void framedImage::initComponent()
 
 }
 
-void framedImage::Render(SDL_Renderer* ren, TransformComponent* trn)
+void framedImage::Render()
 {
 	SDL_Rect dstRect = {
 
-		static_cast<int>(trn->getPosition().getX()),
-		static_cast<int>(trn->getPosition().getY()),
-		srcRect_.w * trn->getSize().x,
-		srcRect_.h * trn->getSize().y
+		static_cast<int>(trn_->getPosition().getX()),
+		static_cast<int>(trn_->getPosition().getY()),
+		srcRect_.w * trn_->getSize().x,
+		srcRect_.h * trn_->getSize().y
 	};
 
 	if (SDL_GetTicks() - lastUpdate_ > animSpeed_)
@@ -204,8 +210,8 @@ void framedImage::Render(SDL_Renderer* ren, TransformComponent* trn)
 
 	};
 
-	//Big error												
-	//SDL_RenderCopy(ren, frTexture_, cFrame_, &dstRect);
+	//Big error	
+	SDL_RenderCopy(ren_.renderer(), frTexture_, &cFrameRect, &dstRect);
 }
 
 //Bullet

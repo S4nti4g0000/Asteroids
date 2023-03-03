@@ -14,7 +14,7 @@ namespace ecs {
 	{
 		_Transform = 0,
 		_frmImage,
-		_brkAsteroid,
+		_AsteroidC,
 		_follow,
 		_reappear,
 		_bullet,

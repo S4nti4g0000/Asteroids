@@ -168,7 +168,7 @@ private:
 	float angle_;
 	float rotateSpeed_ = 0.5;
 
-	float accelerationMagnitude_ = 0.01;
+	float accelerationMagnitude_ = 0.05;
 	float decelerationMagnitude_ = 1;
 	float maxSpeed_ = 3;
 	float currSpeed_ = 0;
@@ -190,7 +190,7 @@ class Image : public Component
 
 public:
 
-	Image(Texture* tex) : transform_(nullptr), texture_(tex)
+	Image(EntityFr* ent, Texture* tex) : entity_(ent), transform_(nullptr), texture_(tex)
 	{
 	}
 	
@@ -218,30 +218,33 @@ private:
 
 	TransformComponent* transform_;
 	Texture* texture_;
+	EntityFr* entity_;
 
 };
 
-class AsteroidComp : public Component
-{
-
-public:
-
-	enum type {a,b};
-
-	AsteroidComp(type t)
-		:t_(t)
+	class AsteroidComp : public Component
 	{
-	}
 
-	virtual void Update();
-	virtual void Render();
+	public:
 
-private:
+		enum type {a,b};
 
-	type t_;
+		AsteroidComp(type t = a)
+			:t_(a)
+		{
+		}
+
+		virtual void Update();
+		virtual void Render();
+
+	private:
+
+		type t_;
 	
 
-};
+	};
+
+
 
 class framedImage : public Component
 {
@@ -253,21 +256,28 @@ public:
 	{}
 
 	void initComponent();
-	virtual void Render(SDL_Renderer* ren, TransformComponent* trn);
+	virtual void Render();
+
+	int setFr(int f)
+	{
+		cFrame_ = f;
+	}
 
 private:
 
 	SDL_Texture* frTexture_;
+	TransformComponent* trn_;
 	SDL_Rect srcRect_;
 
 	int numFrames_;
 	int animSpeed_;
-	float cFrame_;
+	int cFrame_;
 	int frameCount_;
 
 	Uint32 lastUpdate_;
 
 };
+
 
 class Bullet : public Component
 {

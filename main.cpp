@@ -5,6 +5,7 @@
 #include "../AYYLaNavesitaLol/Component.hpp"
 #include "../AYYLaNavesitaLol/Texture.hpp"
 #include "../AYYLaNavesitaLol/Manager.hpp"
+#include "AsteroidManager.hpp"
 
 namespace utils
 {
@@ -34,17 +35,23 @@ int main(int argc, const char **argv[])
 
 	double angle = 45.0;
 
-
+	SDL_Init(SDL_INIT_VIDEO);
 	if (SDL_Init(SDL_INIT_VIDEO) > 0)
 		cout << "Bro, your video failed somewhere! CODE: " << SDL_GetError() << endl;
 
 	if(!(IMG_Init(IMG_INIT_PNG)))
 		cout << "Dude there's an error with the image! CODE: " << SDL_GetError() << endl;
 
-	
-	rWindow window("Epic Space Game!", 800, 600);
+	auto& ren = *rWindow::instance();
 
-	SDL_Renderer* renderer = window.renderer();
+	SDL_Window* window = SDL_CreateWindow("Epic Space Game!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
+		800, 600, SDL_WINDOW_SHOWN);
+
+	SDL_Renderer* renderer = ren.renderer();
+
+	//SDL_Renderer* renderer = window.renderer();
+
+
 	Texture shipTexture(renderer, "resources/ShipSprites/Ship1.png");
 	//Texture asteroidTexture(renderer, "resources/images/AstImg.png");
 
@@ -57,10 +64,6 @@ int main(int argc, const char **argv[])
 	auto vX = 1;
 	auto vY = 1;
 
-	//----
-
-	SDL_Rect src = {32,32,64,64};
-
 	//-----
 
 	auto &ih = *InputHandler::instance();
@@ -71,7 +74,7 @@ int main(int argc, const char **argv[])
 	//Textures
 
 	auto shipTx = new Texture(renderer, "resources/ShipSprites/Ship1.png");
-	auto astTx = new Texture(renderer, "resources/images/asteroid.png");
+	//auto astTx = new Texture(renderer, "resources/images/asteroid.png");
 
 	tm.loadTexture(renderer, "resources/images/asteroid.png", "one");
 
@@ -81,6 +84,7 @@ int main(int argc, const char **argv[])
 	auto manB_ = new Manager();
 	EntityFr* ship = man_->addEnts(_grp_General);
 	auto bullet = manB_->addEnts(_grp_Bullets);
+	AsteroidManager astMngr(man_);
 
 	
 	
@@ -89,7 +93,7 @@ int main(int argc, const char **argv[])
 	//Ship components
 
 	auto shipComp = ship->addComponent<TransformComponent>(_Transform, ship , 0, 64, 64);
-	ship->addComponent<Image>(_frmImage, shipTx);
+	ship->addComponent<Image>(_frmImage, ship ,shipTx);
 	ship->addComponent<WrapAroundComp>(_reappear, winWidth -64, winHeight - 64);
 
 	ship->getComponent<TransformComponent>(_Transform)->setContext(ship, man_);
@@ -105,7 +109,7 @@ int main(int argc, const char **argv[])
 
 	//asteroid
 
-	
+	astMngr.CreateAst(10);
 	
 	//transform()->setPosition(Vector2D(0,0));
 	SDL_Event running;	
@@ -115,19 +119,7 @@ int main(int argc, const char **argv[])
 	float cTime = utils::time();
 
 
-	for (int i = 0; i < 10; i++)
-	{
-		auto Asteroid = man_->addEnts(_grp_Asteroids);
-		auto AsteroidComp = Asteroid->addComponent<TransformComponent>(_Transform, Asteroid, 0, 32, 32);
-		//Asteroid->addComponent<framedImage>(_framed, astTx, src, 6, 50);
-		AsteroidComp->setX(winWidth / 2);
-		AsteroidComp->setY(winHeight / 2);
-		AsteroidComp->setWidth(64);
-		AsteroidComp->setHeight(64);
-
-		cout << "done?" << endl;
-
-	}
+	
 
 	//GameLoop-------------------------------------------------------------------------------------
 
@@ -177,7 +169,7 @@ int main(int argc, const char **argv[])
 
 		//ih().init();
 
-		window.clearScreen();
+		ren.clearScreen();
 		man_->Update();
 		man_->Render();
 		ship->updateC();
@@ -186,24 +178,25 @@ int main(int argc, const char **argv[])
 		//bulletComp->Update(*bullet);
 		//astComp->Render();
 
-		window.display();
+		ren.display();
 
 		/**/
 
 		
 		int frTicks = SDL_GetTicks() - Ticks;
 
-		if (frTicks < 1000 / window.getRefreshRate())
+		if (frTicks < 1000 / ren.getRefreshRate())
 		{
 
-			SDL_Delay(1000 / window.getRefreshRate() - frTicks);
+			SDL_Delay(1000 / ren.getRefreshRate() - frTicks);
 
 		}
 		man_->Refresh();
 
 	}
 
-	window.cleanUp();
+	SDL_DestroyWindow(window);
+	ren.cleanUp();
 	SDL_Quit();
 
 	return 0;

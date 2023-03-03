@@ -36,6 +36,14 @@ public:
 		return instance_.get();
 	}
 
+protected:
+
+	static void createInstance()
+	{
+		instance_ = new T();
+		instance_->initRenderer();
+	}
+
 private:
 	static std::unique_ptr<T> instance_;
 };
